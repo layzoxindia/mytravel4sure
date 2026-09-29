@@ -76,11 +76,26 @@
     footer{border-top:1px solid var(--line);padding:42px 0 28px;background:rgba(255,255,255,.56)}.footer-main{display:grid;grid-template-columns:1.25fr .75fr .9fr;gap:34px}.footer-brand img{width:190px}.footer-brand p{color:var(--muted);line-height:1.65;max-width:390px}.footer-links{display:grid;gap:10px}.footer-links b{margin-bottom:6px}.footer-links a{font-size:14px;color:#58727e}.footer-contact{display:grid;gap:8px;color:#58727e;font-size:14px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:28px;margin-top:28px;border-top:1px solid var(--line);font-size:12px;color:#78909b}
     .legal{padding:70px 0}.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.legal-box{background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px}.legal-box h3{margin-top:0}.legal-box p{color:var(--muted);line-height:1.65;font-size:14px}
     .float-actions{position:fixed;right:18px;bottom:18px;z-index:65;display:grid;gap:10px}.float-actions a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 16px 40px rgba(17,51,71,.18);font-size:20px}.wa{background:#1fab5b}.call{background:var(--blue)}
-    .mobile-sticky{display:none}.reveal{opacity:0;transform:translateY(30px);transition:.75s}.reveal.show{opacity:1;transform:none}
+    .mobile-sticky{display:none}
+
+    /* MyTravel4Sure smart holiday chatbot */
+    .chat-launch{position:fixed;right:18px;bottom:142px;z-index:66;width:58px;height:58px;border:0;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;box-shadow:0 18px 45px rgba(18,96,118,.28);font-weight:950;font-size:15px;transition:.25s}
+    .chat-launch:hover{transform:translateY(-3px) scale(1.03)}
+    .chat-launch .ping{position:absolute;right:2px;top:1px;width:12px;height:12px;border-radius:50%;background:var(--orange);border:2px solid #fff}
+    .chat-panel{position:fixed;right:18px;bottom:214px;z-index:120;width:min(390px,calc(100vw - 28px));height:min(610px,calc(100vh - 245px));min-height:430px;background:#fff;border:1px solid rgba(14,52,70,.12);border-radius:28px;box-shadow:0 35px 100px rgba(14,52,70,.24);overflow:hidden;display:none;grid-template-rows:auto 1fr auto;transform-origin:bottom right}
+    .chat-panel.open{display:grid;animation:chatPop .28s cubic-bezier(.2,.8,.2,1)}
+    @keyframes chatPop{from{opacity:0;transform:translateY(16px) scale(.96)}to{opacity:1;transform:none}}
+    .chat-head{padding:16px 16px 14px;background:linear-gradient(120deg,#087f91,var(--teal) 55%,var(--blue));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .chat-brand{display:flex;align-items:center;gap:11px}.chat-avatar{width:40px;height:40px;border-radius:14px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.25);display:grid;place-items:center;font-weight:950}.chat-head b{display:block}.chat-head small{display:block;color:rgba(255,255,255,.78);margin-top:2px}.chat-close{border:0;background:rgba(255,255,255,.14);color:#fff;width:36px;height:36px;border-radius:50%;font-size:18px}
+    .chat-body{overflow:auto;padding:16px;background:linear-gradient(180deg,#f8fcfc,#fffdf9);scroll-behavior:smooth}.chat-msg{max-width:86%;padding:11px 13px;border-radius:16px;margin-bottom:10px;font-size:13px;line-height:1.5}.chat-msg.bot{background:#fff;border:1px solid var(--line);color:var(--ink);border-bottom-left-radius:6px}.chat-msg.user{margin-left:auto;background:linear-gradient(120deg,var(--teal),var(--blue));color:#fff;border-bottom-right-radius:6px}.chat-msg strong{font-weight:900}
+    .chat-chips{display:flex;flex-wrap:wrap;gap:7px;margin:5px 0 13px}.chat-chip,.chat-suggestion{border:1px solid var(--line);background:#fff;color:#2c6173;border-radius:999px;padding:8px 10px;font-size:11px;font-weight:850;transition:.2s}.chat-chip:hover,.chat-suggestion:hover{border-color:var(--teal);background:#effcfc;transform:translateY(-1px)}
+    .chat-suggestions{display:flex;flex-wrap:wrap;gap:7px;margin:2px 0 12px}.chat-footer{padding:11px;background:#fff;border-top:1px solid var(--line)}.chat-input-row{display:grid;grid-template-columns:1fr auto;gap:8px}.chat-input{height:46px;border:1px solid var(--line);border-radius:14px;padding:0 13px;outline:none;color:var(--ink);background:#fbfdfd}.chat-input:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(8,170,169,.08)}.chat-send{width:46px;height:46px;border:0;border-radius:14px;background:linear-gradient(135deg,var(--teal),var(--blue));color:#fff;font-weight:950}.chat-footnote{font-size:10px;color:#8ba0aa;margin:7px 3px 0;text-align:center}
+
+    .reveal{opacity:0;transform:translateY(30px);transition:.75s}.reveal.show{opacity:1;transform:none}
     .modal{position:fixed;inset:0;background:rgba(8,30,44,.55);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:18px}.modal.open{display:grid}.modal-card{width:min(650px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:30px;padding:28px;box-shadow:0 35px 100px rgba(0,0,0,.25);animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}.modal-top{display:flex;justify-content:space-between;gap:15px;align-items:center}.modal-top h3{font-size:28px;margin:0}.close{border:0;background:#f2f7f8;width:42px;height:42px;border-radius:50%;font-size:20px}.summary{display:none;margin-top:18px;padding:17px;border-radius:16px;background:#f1fbfb;color:#315765;line-height:1.6}.form-actions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
     .brand-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,rgba(169,216,238,.28),transparent 28rem),radial-gradient(circle at 62% 60%,rgba(247,204,0,.11),transparent 22rem),rgba(255,253,248,.98);overflow:hidden;transition:opacity .55s ease,visibility .55s ease}.brand-intro.done{opacity:0;visibility:hidden;pointer-events:none}.intro-logo-wrap{position:relative;width:min(520px,78vw);opacity:0;transform:translateY(18px) scale(.94);animation:introLogoIn .95s cubic-bezier(.2,.85,.25,1) .08s forwards;filter:drop-shadow(0 24px 45px rgba(18,83,103,.11))}.intro-logo-wrap img{width:100%}.intro-logo-wrap::after{content:"";position:absolute;inset:4% -8%;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%,transparent 64%);transform:translateX(-120%) skewX(-12deg);mix-blend-mode:screen;animation:introSweep 1.05s cubic-bezier(.2,.7,.2,1) .72s forwards}.intro-caption{position:absolute;left:50%;bottom:clamp(48px,8vh,86px);transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#69848f;opacity:0;animation:introCaption .5s ease 1.02s forwards}@keyframes introLogoIn{0%{opacity:0;transform:translateY(18px) scale(.94);filter:blur(7px)}65%{opacity:1;transform:translateY(-2px) scale(1.015);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes introSweep{to{transform:translateX(120%) skewX(-12deg)}}@keyframes introCaption{to{opacity:1}}
     @media(max-width:980px){.navlinks,.nav-cta{display:none}.menu{display:block}.hero-grid,.mood-grid,.contact-grid{grid-template-columns:1fr}.visual{min-height:520px}.planner{grid-template-columns:1fr 1fr}.planner .field:first-child{grid-column:1/-1}.planner .btn{grid-column:1/-1}.service-strip{grid-template-columns:repeat(2,1fr)}.dest:nth-child(n){grid-column:span 12}.steps,.trust{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
-    @media(max-width:980px){.match-groups{grid-template-columns:1fr}}@media(max-width:640px){.match-list{grid-template-columns:1fr}.match-card{align-items:flex-start;flex-direction:column}.match-action{width:100%}.wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:8px}.brand img{width:150px;height:44px}.hero{min-height:auto;padding:108px 0 42px}.hero-grid{gap:28px}h1{font-size:50px}.hero-copy p{font-size:16px}.visual{min-height:420px}.sun{width:90px;height:90px}.p1{width:73%;height:54%}.p2{width:49%;height:42%}.stamp{width:96px;height:96px;font-size:13px}.section{padding:68px 0}.section-head{display:block}.section-head p{margin-top:14px}.planner{grid-template-columns:1fr;padding:18px}.planner .field:first-child,.planner .btn{grid-column:auto}.service-strip{grid-template-columns:1fr}.dest{min-height:315px}.journey{padding:34px 22px}.steps,.trust{grid-template-columns:1fr}.mood-panel{padding:23px}.moods{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.contact-panel,.contact-form{padding:24px}.cta-card{padding:50px 22px}.footer-main,.legal-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start}.float-actions{display:none}.mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:64;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(17,51,71,.2)}.mobile-sticky a{padding:14px 10px;text-align:center;color:#fff;font-weight:900}.mobile-sticky .call-link{background:var(--blue)}.mobile-sticky .wa-link{background:#1fab5b}body{padding-bottom:68px}.intro-caption{font-size:9px;letter-spacing:.15em}.intro-logo-wrap{width:82vw}}
+    @media(max-width:980px){.match-groups{grid-template-columns:1fr}}@media(max-width:640px){.chat-launch{right:14px;bottom:82px;width:54px;height:54px}.chat-panel{left:8px;right:8px;bottom:78px;width:auto;height:min(68vh,620px);border-radius:24px}.chat-msg{max-width:90%}.match-list{grid-template-columns:1fr}.match-card{align-items:flex-start;flex-direction:column}.match-action{width:100%}.wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:8px}.brand img{width:150px;height:44px}.hero{min-height:auto;padding:108px 0 42px}.hero-grid{gap:28px}h1{font-size:50px}.hero-copy p{font-size:16px}.visual{min-height:420px}.sun{width:90px;height:90px}.p1{width:73%;height:54%}.p2{width:49%;height:42%}.stamp{width:96px;height:96px;font-size:13px}.section{padding:68px 0}.section-head{display:block}.section-head p{margin-top:14px}.planner{grid-template-columns:1fr;padding:18px}.planner .field:first-child,.planner .btn{grid-column:auto}.service-strip{grid-template-columns:1fr}.dest{min-height:315px}.journey{padding:34px 22px}.steps,.trust{grid-template-columns:1fr}.mood-panel{padding:23px}.moods{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.contact-panel,.contact-form{padding:24px}.cta-card{padding:50px 22px}.footer-main,.legal-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start}.float-actions{display:none}.mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:64;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(17,51,71,.2)}.mobile-sticky a{padding:14px 10px;text-align:center;color:#fff;font-weight:900}.mobile-sticky .call-link{background:var(--blue)}.mobile-sticky .wa-link{background:#1fab5b}body{padding-bottom:68px}.intro-caption{font-size:9px;letter-spacing:.15em}.intro-logo-wrap{width:82vw}}
     @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -273,6 +288,29 @@
   </footer>
 
   <div class="float-actions"><a class="call" href="tel:+919810958069" aria-label="Call MyTravel4Sure">☎</a><a class="wa" href="https://wa.me/919810958069?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday." target="_blank" rel="noopener" aria-label="WhatsApp MyTravel4Sure">◉</a></div>
+  <button class="chat-launch" id="chatLaunch" aria-label="Open holiday assistant" aria-expanded="false">CHAT<span class="ping"></span></button>
+  <section class="chat-panel" id="chatPanel" aria-label="MyTravel4Sure holiday assistant">
+    <div class="chat-head">
+      <div class="chat-brand"><div class="chat-avatar">M4S</div><div><b>Holiday Assistant</b><small>Smart trip help • online</small></div></div>
+      <button class="chat-close" id="chatClose" aria-label="Close chat">×</button>
+    </div>
+    <div class="chat-body" id="chatBody">
+      <div class="chat-msg bot">Hi! I can help you shortlist holidays by <strong>India / Abroad, mood, duration and traveller type</strong>. Try “5 nights honeymoon abroad” or choose a quick option below.</div>
+      <div class="chat-chips" id="chatChips">
+        <button class="chat-chip" data-chat="India holidays">India</button>
+        <button class="chat-chip" data-chat="Abroad holidays">Abroad</button>
+        <button class="chat-chip" data-chat="Romantic honeymoon">Honeymoon</button>
+        <button class="chat-chip" data-chat="Beach holiday">Beach</button>
+        <button class="chat-chip" data-chat="Mountain holiday">Mountains</button>
+        <button class="chat-chip" data-chat="Family holiday">Family</button>
+      </div>
+    </div>
+    <div class="chat-footer">
+      <div class="chat-input-row"><input class="chat-input" id="chatInput" placeholder="Ask about your holiday…" autocomplete="off"><button class="chat-send" id="chatSend" aria-label="Send">➜</button></div>
+      <div class="chat-footnote">For booking or exact pricing, the assistant will connect you to WhatsApp.</div>
+    </div>
+  </section>
+
   <div class="mobile-sticky"><a class="call-link" href="tel:+919810958069">☎ Call</a><a class="wa-link" href="https://wa.me/919810958069?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday." target="_blank" rel="noopener">WhatsApp</a></div>
 
   <div class="modal" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle">
@@ -453,6 +491,65 @@ function buildModalBrief(){
 }
 document.getElementById('sendWa').onclick=()=>{const b=buildModalBrief();if(b)window.open('https://wa.me/'+PHONE+'?text='+b,'_blank','noopener')};
 document.getElementById('copyBrief').onclick=async()=>{const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim();if(!name||!phone){alert('Please add your name and phone / WhatsApp number.');return}const txt=`MyTravel4Sure Holiday Brief\nName: ${name}\nPhone: ${phone}\nDestination: ${tripDestination.value||'Need suggestions'}\nMood: ${tripMood.value}\nDates: ${tripDates.value||'Flexible'}\nNotes: ${notes.value||'None'}`;await navigator.clipboard.writeText(txt);briefSummary.style.display='block';briefSummary.textContent='Holiday brief copied. You can paste it into WhatsApp, email or Notes.'};
+
+
+const chatLaunch=document.getElementById('chatLaunch'),chatPanel=document.getElementById('chatPanel'),chatClose=document.getElementById('chatClose'),chatBody=document.getElementById('chatBody'),chatInput=document.getElementById('chatInput'),chatSend=document.getElementById('chatSend');
+function toggleChat(force){
+  const open=typeof force==='boolean'?force:!chatPanel.classList.contains('open');
+  chatPanel.classList.toggle('open',open);chatLaunch.setAttribute('aria-expanded',open?'true':'false');
+  if(open)setTimeout(()=>chatInput.focus(),80);
+}
+chatLaunch.onclick=()=>toggleChat();chatClose.onclick=()=>toggleChat(false);
+function chatMessage(text,who='bot'){
+  const d=document.createElement('div');d.className='chat-msg '+who;d.innerHTML=text;chatBody.appendChild(d);chatBody.scrollTop=chatBody.scrollHeight;return d;
+}
+function chatSuggestions(items,origin='Delhi',duration='5–7 nights',travellers='2 travellers',mood='all'){
+  const box=document.createElement('div');box.className='chat-suggestions';
+  items.forEach(t=>{const b=document.createElement('button');b.className='chat-suggestion';b.textContent=t.place+' →';b.onclick=()=>{openMatchedTrip(t.place,origin,duration,travellers,mood);toggleChat(false)};box.appendChild(b)});
+  chatBody.appendChild(box);chatBody.scrollTop=chatBody.scrollHeight;
+}
+function detectDuration(q){
+  const m=q.match(/(3|4|5|6|7|8|9|10)\s*(?:night|nights|day|days)/);
+  if(!m)return '5–7 nights';const n=Number(m[1]);if(n<=4)return '3–4 nights';if(n<=7)return '5–7 nights';if(n<=10)return '8–10 nights';return '10+ nights';
+}
+function detectMood(q){
+  if(/honeymoon|romantic|couple|romance/.test(q))return 'romance';
+  if(/beach|island|sea|ocean/.test(q))return 'beach';
+  if(/mountain|hill|nature|snow|valley/.test(q))return 'mountain';
+  if(/city|shopping|culture|nightlife/.test(q))return 'city';
+  return 'all';
+}
+function detectTravellers(q){
+  if(/family|kids|child|children/.test(q))return 'Family';
+  if(/solo|alone/.test(q))return 'Solo';
+  if(/friend|friends|group/.test(q))return 'Friends group';
+  return '2 travellers';
+}
+function holidayBot(raw){
+  const q=raw.trim().toLowerCase();if(!q)return;
+  chatMessage(raw.replace(/[<>&]/g,''),'user');
+  if(/phone|call|number|contact/.test(q)){chatMessage('You can call us directly on <strong>+91 98109 58069</strong>. For faster trip planning, WhatsApp also works well.');return}
+  if(/whatsapp/.test(q)){chatMessage('Sure — I can take you to WhatsApp with a pre-filled holiday enquiry.');const a=document.createElement('a');a.className='chat-suggestion';a.href='https://wa.me/'+PHONE+'?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday.';a.target='_blank';a.rel='noopener';a.textContent='Open WhatsApp →';const b=document.createElement('div');b.className='chat-suggestions';b.appendChild(a);chatBody.appendChild(b);return}
+  if(/price|cost|budget|quote|package rate|how much/.test(q)){chatMessage('Exact holiday pricing depends on dates, hotel category, flights and availability. I can shortlist the right destination first, then you can send the trip brief on WhatsApp for a real quote.');return}
+  if(/email/.test(q)){chatMessage('Current website email is <strong>hello@mytravel4sure.com</strong>. It is still marked as a placeholder until the final business email is confirmed.');return}
+  if(/address|office|delhi/.test(q) && !/from delhi|delhi to/.test(q)){chatMessage('The website currently shows a placeholder Delhi office at <strong>Connaught Place, New Delhi – 110001</strong>. Replace it with the verified office address before final commercial launch.');return}
+
+  const mood=detectMood(q),duration=detectDuration(q),travellers=detectTravellers(q);
+  const region=/abroad|international|foreign|outside india/.test(q)?'Abroad':(/india|domestic|within india/.test(q)?'India':null);
+  const originMatch=raw.match(/(?:from|se)\s+([A-Za-z ]{2,25})/i);
+  const origin=originMatch?originMatch[1].trim():'Delhi';
+  let ranked=tripData.map(t=>({...t,score:scoreTrip(t,mood,duration,travellers)}));
+  if(region)ranked=ranked.filter(t=>t.region===region);
+  ranked.sort((a,b)=>b.score-a.score);
+  const top=ranked.slice(0,5);
+  const regionText=region?region:(top.length&&top[0].region||'holiday');
+  chatMessage('For <strong>'+duration+'</strong>, <strong>'+travellers.toLowerCase()+'</strong> and your travel style, these '+regionText+' options fit best:');
+  chatSuggestions(top,origin,duration,travellers,mood);
+  chatMessage('Tap any destination to carry it into the full holiday enquiry. You can also type <strong>“10 nights abroad family”</strong> or <strong>“romantic India trip”</strong>.');
+}
+chatSend.onclick=()=>{const v=chatInput.value;chatInput.value='';holidayBot(v)};
+chatInput.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();chatSend.click()}});
+document.querySelectorAll('.chat-chip').forEach(b=>b.onclick=()=>holidayBot(b.dataset.chat));
 
 document.getElementById('sendContactWa').onclick=()=>{
  const n=cName.value.trim(),p=cPhone.value.trim();if(!n||!p){alert('Please add your name and phone / WhatsApp number.');return}
