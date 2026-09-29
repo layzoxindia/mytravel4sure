@@ -60,6 +60,9 @@
     .planner{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:34px;padding:24px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:12px;align-items:end}
     .field label{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#64808d;display:block;margin:0 0 8px 4px}.field select,.field input,.field textarea{width:100%;border-radius:16px;border:1px solid var(--line);background:#f9fcfc;color:var(--ink);padding:0 14px;font-weight:700;outline:none}.field select,.field input{height:52px}.field textarea{min-height:110px;padding-top:14px;resize:vertical}.field select:focus,.field input:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(8,170,169,.1)}
     .planner .btn{height:52px}.result-note{margin:17px 4px 0;color:#56717f;font-size:14px;min-height:20px}
+    .match-panel{margin-top:20px;background:linear-gradient(145deg,#ffffff,#f6fbfc);border:1px solid var(--line);border-radius:28px;padding:22px;box-shadow:0 22px 60px rgba(17,51,71,.08)}
+    .match-panel[hidden]{display:none}.match-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.match-kicker{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--teal)}.match-head h3{font-size:28px;letter-spacing:-.04em;margin:5px 0 6px}.match-head p{margin:0;color:var(--muted);line-height:1.55}.match-close{width:38px;height:38px;border:0;border-radius:50%;background:#eef7f8;color:var(--ink);font-size:22px}.match-list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.match-card{border:1px solid var(--line);background:#fff;border-radius:20px;padding:18px;display:flex;justify-content:space-between;gap:18px;align-items:center;transition:.25s}.match-card:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(17,51,71,.07)}.match-card h4{margin:0 0 5px;font-size:20px}.match-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.45}.match-score{font-size:11px;font-weight:900;color:var(--teal);margin-top:8px}.match-action{border:0;border-radius:999px;padding:10px 13px;background:linear-gradient(110deg,var(--teal),var(--blue));color:#fff;font-weight:850;white-space:nowrap}
+
     .service-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.service{padding:22px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.75);transition:.25s}.service:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(17,51,71,.08)}.service span{font-size:27px}.service b{display:block;margin:12px 0 6px}.service small{color:var(--muted);line-height:1.45}
     .dest-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.dest{position:relative;min-height:355px;border-radius:30px;overflow:hidden;background:#ddd;box-shadow:0 18px 55px rgba(17,51,71,.13);isolation:isolate;transition:.38s}.dest:hover{transform:translateY(-7px)}
     .dest:nth-child(1),.dest:nth-child(4){grid-column:span 7}.dest:nth-child(2),.dest:nth-child(3){grid-column:span 5}.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}.dest:hover img{transform:scale(1.055)}.dest::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 23%,rgba(5,35,51,.78) 100%)}.dest-body{position:absolute;z-index:2;inset:auto 25px 22px;color:#fff}.tag{display:inline-flex;background:rgba(255,255,255,.19);backdrop-filter:blur(12px);padding:7px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.dest h3{font-size:33px;letter-spacing:-.04em;margin:12px 0 4px}.dest p{margin:0;color:rgba(255,255,255,.88);font-size:14px}.dest-actions{display:flex;gap:9px;margin-top:16px}.mini-btn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff;padding:9px 12px;border-radius:999px;font-size:12px;font-weight:850;backdrop-filter:blur(12px)}.mini-btn.primary{background:#fff;color:var(--ink)}
@@ -77,7 +80,7 @@
     .modal{position:fixed;inset:0;background:rgba(8,30,44,.55);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:18px}.modal.open{display:grid}.modal-card{width:min(650px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:30px;padding:28px;box-shadow:0 35px 100px rgba(0,0,0,.25);animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}.modal-top{display:flex;justify-content:space-between;gap:15px;align-items:center}.modal-top h3{font-size:28px;margin:0}.close{border:0;background:#f2f7f8;width:42px;height:42px;border-radius:50%;font-size:20px}.summary{display:none;margin-top:18px;padding:17px;border-radius:16px;background:#f1fbfb;color:#315765;line-height:1.6}.form-actions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
     .brand-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,rgba(169,216,238,.28),transparent 28rem),radial-gradient(circle at 62% 60%,rgba(247,204,0,.11),transparent 22rem),rgba(255,253,248,.98);overflow:hidden;transition:opacity .55s ease,visibility .55s ease}.brand-intro.done{opacity:0;visibility:hidden;pointer-events:none}.intro-logo-wrap{position:relative;width:min(520px,78vw);opacity:0;transform:translateY(18px) scale(.94);animation:introLogoIn .95s cubic-bezier(.2,.85,.25,1) .08s forwards;filter:drop-shadow(0 24px 45px rgba(18,83,103,.11))}.intro-logo-wrap img{width:100%}.intro-logo-wrap::after{content:"";position:absolute;inset:4% -8%;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%,transparent 64%);transform:translateX(-120%) skewX(-12deg);mix-blend-mode:screen;animation:introSweep 1.05s cubic-bezier(.2,.7,.2,1) .72s forwards}.intro-caption{position:absolute;left:50%;bottom:clamp(48px,8vh,86px);transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#69848f;opacity:0;animation:introCaption .5s ease 1.02s forwards}@keyframes introLogoIn{0%{opacity:0;transform:translateY(18px) scale(.94);filter:blur(7px)}65%{opacity:1;transform:translateY(-2px) scale(1.015);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes introSweep{to{transform:translateX(120%) skewX(-12deg)}}@keyframes introCaption{to{opacity:1}}
     @media(max-width:980px){.navlinks,.nav-cta{display:none}.menu{display:block}.hero-grid,.mood-grid,.contact-grid{grid-template-columns:1fr}.visual{min-height:520px}.planner{grid-template-columns:1fr 1fr}.planner .field:first-child{grid-column:1/-1}.planner .btn{grid-column:1/-1}.service-strip{grid-template-columns:repeat(2,1fr)}.dest:nth-child(n){grid-column:span 12}.steps,.trust{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
-    @media(max-width:640px){.wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:8px}.brand img{width:150px;height:44px}.hero{min-height:auto;padding:108px 0 42px}.hero-grid{gap:28px}h1{font-size:50px}.hero-copy p{font-size:16px}.visual{min-height:420px}.sun{width:90px;height:90px}.p1{width:73%;height:54%}.p2{width:49%;height:42%}.stamp{width:96px;height:96px;font-size:13px}.section{padding:68px 0}.section-head{display:block}.section-head p{margin-top:14px}.planner{grid-template-columns:1fr;padding:18px}.planner .field:first-child,.planner .btn{grid-column:auto}.service-strip{grid-template-columns:1fr}.dest{min-height:315px}.journey{padding:34px 22px}.steps,.trust{grid-template-columns:1fr}.mood-panel{padding:23px}.moods{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.contact-panel,.contact-form{padding:24px}.cta-card{padding:50px 22px}.footer-main,.legal-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start}.float-actions{display:none}.mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:64;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(17,51,71,.2)}.mobile-sticky a{padding:14px 10px;text-align:center;color:#fff;font-weight:900}.mobile-sticky .call-link{background:var(--blue)}.mobile-sticky .wa-link{background:#1fab5b}body{padding-bottom:68px}.intro-caption{font-size:9px;letter-spacing:.15em}.intro-logo-wrap{width:82vw}}
+    @media(max-width:640px){.match-list{grid-template-columns:1fr}.match-card{align-items:flex-start;flex-direction:column}.match-action{width:100%}.wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:8px}.brand img{width:150px;height:44px}.hero{min-height:auto;padding:108px 0 42px}.hero-grid{gap:28px}h1{font-size:50px}.hero-copy p{font-size:16px}.visual{min-height:420px}.sun{width:90px;height:90px}.p1{width:73%;height:54%}.p2{width:49%;height:42%}.stamp{width:96px;height:96px;font-size:13px}.section{padding:68px 0}.section-head{display:block}.section-head p{margin-top:14px}.planner{grid-template-columns:1fr;padding:18px}.planner .field:first-child,.planner .btn{grid-column:auto}.service-strip{grid-template-columns:1fr}.dest{min-height:315px}.journey{padding:34px 22px}.steps,.trust{grid-template-columns:1fr}.mood-panel{padding:23px}.moods{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.contact-panel,.contact-form{padding:24px}.cta-card{padding:50px 22px}.footer-main,.legal-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start}.float-actions{display:none}.mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:64;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(17,51,71,.2)}.mobile-sticky a{padding:14px 10px;text-align:center;color:#fff;font-weight:900}.mobile-sticky .call-link{background:var(--blue)}.mobile-sticky .wa-link{background:#1fab5b}body{padding-bottom:68px}.intro-caption{font-size:9px;letter-spacing:.15em}.intro-logo-wrap{width:82vw}}
     @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
@@ -142,6 +145,17 @@
           <button class="btn btn-primary" id="matchBtn">Show matches</button>
         </div>
         <div class="result-note" id="resultNote"></div>
+        <div class="match-panel" id="matchPanel" hidden>
+          <div class="match-head">
+            <div>
+              <span class="match-kicker">Your holiday matches</span>
+              <h3 id="matchTitle">Best-fit escapes</h3>
+              <p id="matchSummary"></p>
+            </div>
+            <button class="match-close" id="matchClose" aria-label="Close recommendations">×</button>
+          </div>
+          <div class="match-list" id="matchList"></div>
+        </div>
       </div>
     </section>
 
@@ -289,12 +303,52 @@ document.querySelectorAll('.enquire-place').forEach(btn=>btn.addEventListener('c
 document.querySelectorAll('.details-place').forEach(btn=>btn.addEventListener('click',e=>{document.getElementById('resultNote').textContent=e.currentTarget.closest('.dest').dataset.place+' selected. Tell us your dates and travellers below.';document.getElementById('planner').scrollIntoView({behavior:'smooth'})}));
 
 const cards=[...document.querySelectorAll('.dest')];
+const tripData=[
+  {place:'Maldives',moods:['beach','romance'],durations:['3–4 nights','5–7 nights'],travellers:['2 travellers','Family'],why:'Best for a slow island reset, couples and short luxury breaks.'},
+  {place:'Dubai',moods:['city','romance'],durations:['3–4 nights','5–7 nights'],travellers:['2 travellers','Family','Friends group'],why:'Strong fit for short city breaks, families and first-time international trips.'},
+  {place:'Kashmir',moods:['mountain','romance'],durations:['3–4 nights','5–7 nights','8–10 nights'],travellers:['2 travellers','Family','Friends group'],why:'Great for scenery, cool weather, family time and relaxed pacing.'},
+  {place:'Bali',moods:['beach','city','romance'],durations:['5–7 nights','8–10 nights','10+ nights'],travellers:['2 travellers','Solo','Friends group'],why:'Works well for longer tropical trips mixing beaches, culture and wellness.'}
+];
+function scoreTrip(t,mood,duration,travellers){
+  let score=0;
+  if(mood==='all') score+=2; else if(t.moods.includes(mood)) score+=5;
+  if(t.durations.includes(duration)) score+=3;
+  if(t.travellers.includes(travellers)) score+=2;
+  return score;
+}
+function openMatchedTrip(place,origin,duration,travellers,mood){
+  openModal(place);
+  document.getElementById('tripDates').value='';
+  document.getElementById('notes').value=`Suggested from planner: Origin ${origin}; Duration ${duration}; Travellers ${travellers}; Mood ${mood==='all'?'Surprise me':mood}.`;
+}
 document.getElementById('matchBtn').onclick=()=>{
-  const mood=document.getElementById('moodSelect').value,origin=(document.getElementById('origin').value||'Delhi').trim();let n=0;
-  cards.forEach(c=>{const ok=mood==='all'||c.dataset.mood.includes(mood);c.style.display=ok?'block':'none';if(ok)n++});
-  document.getElementById('resultNote').textContent=`Showing ${n} inspiration ${n===1?'route':'routes'} for ${document.getElementById('duration').value.toLowerCase()} from ${origin}.`;
-  document.getElementById('holidays').scrollIntoView({behavior:'smooth'})
+  const mood=document.getElementById('moodSelect').value;
+  const origin=(document.getElementById('origin').value||'Delhi').trim();
+  const duration=document.getElementById('duration').value;
+  const travellers=document.getElementById('travellers').value;
+  if(origin.length<2){alert('Please enter your departure city.');document.getElementById('origin').focus();return}
+  const ranked=tripData.map(t=>({...t,score:scoreTrip(t,mood,duration,travellers)})).sort((a,b)=>b.score-a.score);
+  const bestScore=ranked[0].score;
+  const visible=ranked.filter(t=>t.score>=Math.max(2,bestScore-2)).slice(0,4);
+  cards.forEach(c=>{c.style.display=visible.some(v=>v.place===c.dataset.place)?'block':'none'});
+  document.getElementById('resultNote').textContent=`Matched ${visible.length} holiday ${visible.length===1?'idea':'ideas'} for ${duration.toLowerCase()} from ${origin}.`;
+  document.getElementById('matchTitle').textContent=visible[0].place+' looks like your strongest match';
+  document.getElementById('matchSummary').textContent=`Based on ${travellers.toLowerCase()}, ${duration.toLowerCase()} and your selected holiday mood.`;
+  document.getElementById('matchList').innerHTML=visible.map((t,i)=>`
+    <div class="match-card">
+      <div>
+        <h4>${i===0?'★ ':''}${t.place}</h4>
+        <p>${t.why}</p>
+        <div class="match-score">${i===0?'Top match':'Also a good fit'}</div>
+      </div>
+      <button class="match-action" data-match="${t.place}">Plan this trip</button>
+    </div>`).join('');
+  document.getElementById('matchPanel').hidden=false;
+  document.getElementById('matchList').querySelectorAll('.match-action').forEach(b=>b.onclick=()=>openMatchedTrip(b.dataset.match,origin,duration,travellers,mood));
+  document.getElementById('matchPanel').scrollIntoView({behavior:'smooth',block:'center'});
 };
+document.getElementById('matchClose').onclick=()=>{document.getElementById('matchPanel').hidden=true};
+
 
 const stories={
 beach:{title:'The Unplug Escape',desc:'A gentle beach-first rhythm with enough space to actually feel like you are on holiday.',rows:[['Day 1','Arrive • settle in • sunset walk'],['Day 2','Water morning • long lunch • free evening'],['Day 3','Island experience • golden-hour pause'],['Day 4','Slow breakfast • last swim • fly home']]},
