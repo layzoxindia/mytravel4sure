@@ -1,334 +1,101 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
-  <meta name="theme-color" content="#0aa8ad" />
-  <meta name="description" content="MyTravel4Sure — premium, thoughtfully curated holiday experiences." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0aa8ad">
+  <meta name="description" content="MyTravel4Sure creates premium, personalized holiday experiences for couples, families, friends and solo travellers from Delhi and across India.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="MyTravel4Sure — Premium Holiday Experiences">
+  <meta property="og:description" content="Curated holidays, designed around your mood, pace and travel style.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mytravel4sure.vercel.app/">
+  <link rel="icon" href="assets/mytravel4sure-logo.png">
   <title>MyTravel4Sure — Premium Holiday Experiences</title>
   <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
   <style>
     :root{
-      --sky:#a9d8ee;
-      --blue:#27a0bd;
-      --teal:#08aaa9;
-      --yellow:#f7cc00;
-      --orange:#ff9f00;
-      --coral:#f43b22;
-      --ink:#113347;
-      --muted:#5c7481;
-      --paper:#fffdf8;
-      --white:#ffffff;
-      --line:rgba(17,51,71,.12);
-      --shadow:0 28px 80px rgba(25,73,94,.15);
-      --radius:32px;
+      --sky:#addcf0;--blue:#27a0bd;--teal:#08aaa9;--yellow:#f7cb00;--orange:#ff9f00;--coral:#f33f24;
+      --ink:#0e3446;--muted:#607986;--paper:#fffdf9;--white:#fff;--line:rgba(14,52,70,.12);
+      --shadow:0 28px 80px rgba(20,76,96,.14);--radius:30px;
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--ink);
-      background:
-        radial-gradient(circle at 7% 10%,rgba(169,216,238,.32),transparent 27rem),
-        radial-gradient(circle at 89% 28%,rgba(247,204,0,.14),transparent 25rem),
-        radial-gradient(circle at 78% 78%,rgba(244,59,34,.08),transparent 26rem),
-        var(--paper);
-      overflow-x:hidden;
-    }
-    body::before{
-      content:"";position:fixed;inset:0;pointer-events:none;z-index:999;
-      opacity:.17;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
-      mix-blend-mode:multiply
-    }
-    a{color:inherit;text-decoration:none}
-    button,input,select{font:inherit}
-    button{cursor:pointer}
-    img{max-width:100%;display:block}
+    html{scroll-behavior:smooth;scroll-padding-top:96px}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);
+      background:radial-gradient(circle at 8% 8%,rgba(173,220,240,.34),transparent 28rem),
+      radial-gradient(circle at 90% 26%,rgba(247,203,0,.13),transparent 25rem),
+      radial-gradient(circle at 78% 80%,rgba(243,63,36,.07),transparent 26rem),var(--paper);overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.13;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.78' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E")}
+    a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}
     .wrap{width:min(1180px,calc(100% - 40px));margin:auto}
-    .nav-shell{
-      position:fixed;z-index:50;top:18px;left:50%;transform:translateX(-50%);
-      width:min(1180px,calc(100% - 28px));
-      background:rgba(255,255,255,.78);backdrop-filter:blur(22px) saturate(140%);
-      border:1px solid rgba(255,255,255,.8);box-shadow:0 14px 45px rgba(24,74,96,.12);
-      border-radius:22px;padding:10px 12px;transition:.35s ease;
-    }
-    .nav-shell.scrolled{top:9px;background:rgba(255,255,255,.92)}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:24px}
-    .brand img{width:190px;height:54px;object-fit:contain;object-position:left center}
-    .navlinks{display:flex;align-items:center;gap:26px;font-size:14px;font-weight:700;color:#385a6d}
-    .navlinks a{position:relative}
+    .nav-shell{position:fixed;z-index:70;top:18px;left:50%;transform:translateX(-50%);width:min(1180px,calc(100% - 28px));
+      background:rgba(255,255,255,.82);backdrop-filter:blur(22px) saturate(145%);border:1px solid rgba(255,255,255,.86);
+      box-shadow:0 14px 45px rgba(24,74,96,.12);border-radius:22px;padding:9px 11px;transition:.35s ease}
+    .nav-shell.scrolled{top:8px;background:rgba(255,255,255,.94)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:24px}.brand img{width:188px;height:54px;object-fit:contain;object-position:left center}
+    .navlinks{display:flex;align-items:center;gap:22px;font-size:13px;font-weight:800;color:#385a6d}.navlinks a{position:relative}
     .navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:2px;background:linear-gradient(90deg,var(--teal),var(--orange));transition:.25s}
-    .navlinks a:hover::after{right:0}
-    .nav-cta,.btn{
-      border:0;border-radius:999px;padding:13px 19px;font-weight:800;letter-spacing:-.01em;
-      transition:transform .25s,box-shadow .25s,filter .25s;
-    }
-    .nav-cta,.btn-primary{
-      color:white;background:linear-gradient(110deg,var(--teal),var(--blue) 45%,#1776c5);
-      box-shadow:0 12px 30px rgba(8,170,169,.24)
-    }
-    .nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:saturate(1.08)}
-    .btn-secondary{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 9px 30px rgba(17,51,71,.07)}
-    .menu{display:none;border:0;background:transparent;font-size:26px;color:var(--ink)}
-    .hero{
-      min-height:100svh;position:relative;display:grid;align-items:center;padding:135px 0 70px;isolation:isolate
-    }
-    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:64px}
-    .eyebrow{
-      display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;
-      background:#fff;border:1px solid var(--line);font-size:12px;text-transform:uppercase;
-      letter-spacing:.18em;font-weight:900;color:#2a7187
-    }
+    .navlinks a:hover::after{right:0}.nav-cta,.btn{border:0;border-radius:999px;padding:13px 19px;font-weight:850;transition:.25s}
+    .nav-cta,.btn-primary{color:#fff;background:linear-gradient(110deg,var(--teal),var(--blue) 48%,#1776c5);box-shadow:0 12px 30px rgba(8,170,169,.24)}
+    .btn:hover,.nav-cta:hover{transform:translateY(-2px)}.btn-secondary{background:#fff;border:1px solid var(--line);color:var(--ink);box-shadow:0 9px 30px rgba(17,51,71,.07)}
+    .menu{display:none;border:0;background:#f5fbfb;color:var(--ink);width:44px;height:44px;border-radius:14px;font-size:22px}
+    .mobile-menu{display:none;position:absolute;top:70px;left:10px;right:10px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow)}
+    .mobile-menu.open{display:grid}.mobile-menu a,.mobile-menu button{padding:13px 12px;border:0;background:transparent;text-align:left;border-radius:12px;font-weight:800;color:#385a6d}.mobile-menu a:hover{background:#f4fbfb}
+    .hero{min-height:100svh;position:relative;display:grid;align-items:center;padding:135px 0 70px;isolation:isolate}
+    .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;align-items:center;gap:64px}.eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:900;color:#2a7187}
     .eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:15px 0 0 var(--yellow),30px 0 0 var(--teal);margin-right:30px}
-    h1{font-size:clamp(54px,6.2vw,90px);line-height:.94;letter-spacing:-.065em;margin:24px 0 23px}
-    h1 .wash{
-      display:inline-block;background:linear-gradient(110deg,var(--teal) 8%,var(--blue) 36%,var(--orange) 70%,var(--coral));
-      -webkit-background-clip:text;background-clip:text;color:transparent;background-size:180% auto;
-      animation:shimmer 7s linear infinite
-    }
-    @keyframes shimmer{to{background-position:180% center}}
-    .hero-copy p{font-size:18px;line-height:1.72;color:var(--muted);max-width:660px;margin:0}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-    .btn{padding:15px 23px}
-    .micro{display:flex;align-items:center;gap:15px;margin-top:31px;color:#66808c;font-size:13px;font-weight:650}
-    .micro .dotline{display:flex}.micro .dotline span{width:12px;height:12px;border-radius:50%;margin-left:-2px;border:2px solid #fff}
-    .visual{position:relative;min-height:610px;perspective:1200px}
-    .orbit{
-      position:absolute;left:0;top:7%;width:100%;height:86%;border:1px dashed rgba(39,160,189,.22);
-      border-radius:48% 52% 51% 49%/59% 43% 57% 41%;animation:spin 24s linear infinite
-    }
-    @keyframes spin{to{transform:rotate(360deg)}}
-    .sun{position:absolute;width:155px;height:155px;border-radius:50%;background:radial-gradient(circle at 35% 32%,#fff8b3,var(--yellow) 45%,var(--orange));right:18px;top:30px;filter:blur(.2px);box-shadow:0 0 80px rgba(247,204,0,.26)}
-    .plane-line{
-      position:absolute;left:-18px;top:78px;width:84%;height:38%;
-      border-top:3px solid rgba(8,170,169,.6);border-radius:50% 55% 0 0;transform:rotate(-12deg)
-    }
-    .plane{position:absolute;left:67%;top:4%;font-size:30px;transform:rotate(20deg);animation:fly 4s ease-in-out infinite}
-    @keyframes fly{50%{transform:translate(16px,-13px) rotate(25deg)}}
-    .postcard{
-      position:absolute;overflow:hidden;border:9px solid rgba(255,255,255,.96);box-shadow:var(--shadow);
-      background:#ddd;transition:.45s cubic-bezier(.2,.8,.2,1)
-    }
-    .postcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,29,47,.52))}
-    .postcard img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
-    .postcard:hover img{transform:scale(1.07)}
-    .postcard:hover{transform:translateY(-7px) rotate(0deg)!important}
-    .postcard strong{position:absolute;z-index:3;left:18px;bottom:16px;color:#fff;font-size:17px}
-    .p1{width:68%;height:58%;left:2%;top:18%;border-radius:35% 18% 30% 16%;transform:rotate(-4deg)}
-    .p2{width:46%;height:44%;right:0;top:42%;border-radius:22% 38% 17% 33%;transform:rotate(6deg)}
-    .stamp{
-      position:absolute;z-index:6;right:17%;bottom:3%;width:132px;height:132px;border-radius:50%;
-      display:grid;place-items:center;text-align:center;background:var(--coral);color:white;border:8px solid #fff;
-      box-shadow:0 18px 35px rgba(244,59,34,.25);font-weight:900;letter-spacing:-.03em;transform:rotate(-9deg)
-    }
-    .stamp small{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
-    .wave{position:absolute;left:0;right:0;bottom:-1px;height:90px;z-index:-1;opacity:.95}
-    .section{padding:105px 0;position:relative}
-    .section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
-    .section-head h2{font-size:clamp(38px,4.2vw,64px);letter-spacing:-.055em;line-height:1;margin:0}
-    .section-head p{max-width:510px;color:var(--muted);line-height:1.7;margin:0}
-    .planner{
-      background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:36px;padding:24px;
-      display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:12px;align-items:end
-    }
-    .field label{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#64808d;display:block;margin:0 0 8px 4px}
-    .field select,.field input{
-      width:100%;height:52px;border-radius:16px;border:1px solid var(--line);background:#f9fcfc;color:var(--ink);
-      padding:0 14px;font-weight:700;outline:none;transition:.2s
-    }
-    .field select:focus,.field input:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(8,170,169,.1)}
-    .planner .btn{height:52px}
-    .result-note{margin:17px 4px 0;color:#56717f;font-size:14px;min-height:20px}
-    .dest-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
-    .dest{
-      position:relative;min-height:355px;border-radius:30px;overflow:hidden;background:#ddd;box-shadow:0 18px 55px rgba(17,51,71,.13);
-      isolation:isolate;transition:.38s cubic-bezier(.2,.8,.2,1)
-    }
-    .dest:hover{transform:translateY(-8px)}
-    .dest:nth-child(1),.dest:nth-child(4){grid-column:span 7}.dest:nth-child(2),.dest:nth-child(3){grid-column:span 5}
-    .dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
-    .dest:hover img{transform:scale(1.055)}
-    .dest::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 23%,rgba(5,35,51,.76) 100%)}
-    .dest-body{position:absolute;z-index:2;inset:auto 25px 22px;color:#fff}
-    .tag{display:inline-flex;background:rgba(255,255,255,.19);backdrop-filter:blur(12px);padding:7px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
-    .dest h3{font-size:33px;letter-spacing:-.04em;margin:12px 0 4px}
-    .dest p{margin:0;color:rgba(255,255,255,.86);font-size:14px}
-    .journey{
-      border-radius:40px;padding:54px;background:
-      linear-gradient(115deg,rgba(5,49,67,.98),rgba(8,109,126,.98));
-      color:white;position:relative;overflow:hidden
-    }
-    .journey::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-210px;top:-260px;border:85px solid rgba(255,255,255,.035)}
-    .journey h2{font-size:clamp(40px,4vw,62px);letter-spacing:-.055em;margin:0 0 12px;max-width:780px}
-    .journey>p{color:rgba(255,255,255,.7);max-width:650px;line-height:1.7}
-    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px;position:relative}
-    .step{padding:24px 17px 20px;border-top:1px solid rgba(255,255,255,.18);position:relative}
-    .step::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--yellow);position:absolute;top:-6px;left:18px;box-shadow:0 0 0 8px rgba(247,204,0,.08)}
-    .step:nth-child(2)::before{background:var(--teal)}.step:nth-child(3)::before{background:var(--orange)}.step:nth-child(4)::before{background:var(--coral)}
-    .step b{font-size:12px;color:#9bdfe2;text-transform:uppercase;letter-spacing:.12em}
-    .step h4{font-size:20px;margin:12px 0 8px}.step p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.6;margin:0}
-    .feature-track{display:flex;gap:16px;overflow:hidden;margin-top:32px}
-    .feature-pill{white-space:nowrap;padding:11px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.15);color:#d7f5f6;background:rgba(255,255,255,.05)}
-    .mover{display:flex;gap:16px;animation:marquee 22s linear infinite}
-    @keyframes marquee{to{transform:translateX(-50%)}}
-    .mood-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:stretch}
-    .mood-panel{background:#fff;border:1px solid var(--line);border-radius:34px;padding:34px;box-shadow:0 24px 65px rgba(17,51,71,.08)}
-    .mood-panel h3{font-size:34px;letter-spacing:-.045em;margin:0 0 8px}.mood-panel p{color:var(--muted);line-height:1.7}
-    .moods{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}
-    .mood{
-      border:1px solid var(--line);background:#fbfdfd;border-radius:20px;padding:18px;text-align:left;color:var(--ink);transition:.25s
-    }
-    .mood:hover,.mood.active{border-color:var(--teal);background:linear-gradient(145deg,#f0ffff,#fffaf1);transform:translateY(-2px)}
-    .mood span{display:block;font-size:25px;margin-bottom:9px}.mood b{display:block}.mood small{color:#6c838e}
-    .itinerary{
-      border-radius:34px;padding:31px;color:white;position:relative;overflow:hidden;min-height:100%;
-      background:linear-gradient(145deg,var(--coral),var(--orange) 55%,var(--yellow))
-    }
-    .itinerary::after{content:"✈";position:absolute;font-size:180px;right:-35px;bottom:-55px;opacity:.11;transform:rotate(-18deg)}
-    .itinerary h3{font-size:34px;margin:0 0 8px;letter-spacing:-.04em}.itinerary p{color:rgba(255,255,255,.8)}
-    .route{margin-top:28px}.route-row{display:flex;gap:14px;align-items:flex-start;position:relative;padding:0 0 25px}
-    .route-row:not(:last-child)::after{content:"";position:absolute;left:9px;top:21px;bottom:1px;border-left:1px dashed rgba(255,255,255,.55)}
-    .route-dot{width:19px;height:19px;border-radius:50%;background:#fff;border:5px solid rgba(255,255,255,.25);box-shadow:0 0 0 2px #fff;flex:0 0 auto}
-    .route-row b{display:block;font-size:15px}.route-row small{color:rgba(255,255,255,.76)}
-    .final-cta{padding:95px 0 120px}
-    .cta-card{
-      position:relative;border-radius:44px;padding:70px 55px;overflow:hidden;text-align:center;color:white;
-      background:linear-gradient(120deg,#118ca8,var(--teal) 42%,#1d74c9);box-shadow:0 35px 90px rgba(8,147,160,.22)
-    }
-    .cta-card::before,.cta-card::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.08)}
-    .cta-card::before{width:340px;height:340px;left:-150px;top:-170px}.cta-card::after{width:270px;height:270px;right:-100px;bottom:-160px}
-    .cta-card h2{font-size:clamp(42px,5vw,68px);line-height:1;letter-spacing:-.055em;margin:0 auto 16px;max-width:820px}
-    .cta-card p{max-width:610px;margin:0 auto 30px;color:rgba(255,255,255,.78);line-height:1.7}
-    .cta-card .btn-secondary{position:relative;z-index:2}
-    footer{border-top:1px solid var(--line);padding:34px 0 44px;color:#617b87}
-    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:25px}
-    footer img{width:170px}
-    .palette{display:flex;gap:7px}.palette i{width:12px;height:12px;border-radius:50%}
-    .reveal{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.8,.2,1)}
-    .reveal.show{opacity:1;transform:none}
-    .modal{position:fixed;inset:0;background:rgba(8,30,44,.55);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:18px}
-    .modal.open{display:grid}
-    .modal-card{width:min(620px,100%);background:#fff;border-radius:32px;padding:28px;box-shadow:0 35px 100px rgba(0,0,0,.25);animation:pop .3s ease}
-    @keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}
-    .modal-top{display:flex;justify-content:space-between;gap:15px;align-items:center}.modal-top h3{font-size:28px;margin:0}
-    .close{border:0;background:#f2f7f8;width:42px;height:42px;border-radius:50%;font-size:20px}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.form-grid .wide{grid-column:1/-1}
-    .modal input,.modal select{width:100%;height:50px;border:1px solid var(--line);border-radius:14px;padding:0 13px;outline:none}
-    .form-actions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
-    .summary{display:none;margin-top:18px;padding:17px;border-radius:16px;background:#f1fbfb;color:#315765;line-height:1.6}
-    @media(max-width:900px){
-      .navlinks{display:none}.menu{display:block}.nav-cta{display:none}
-      .hero{padding-top:120px}.hero-grid,.mood-grid{grid-template-columns:1fr}.visual{min-height:520px}
-      .planner{grid-template-columns:1fr 1fr}.planner .field:first-child{grid-column:1/-1}.planner .btn{grid-column:1/-1}
-      .dest:nth-child(n){grid-column:span 12}.steps{grid-template-columns:1fr 1fr}
-      .section-head{display:block}.section-head p{margin-top:16px}
-    }
-    @media(max-width:600px){
-      .wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:9px}.brand img{width:155px;height:45px}
-      .hero{min-height:auto;padding:110px 0 45px}.hero-grid{gap:28px}h1{font-size:52px}
-      .visual{min-height:430px}.sun{width:95px;height:95px}.p1{width:72%;height:55%}.p2{width:48%;height:42%}.stamp{width:98px;height:98px;font-size:13px}
-      .section{padding:72px 0}.planner{grid-template-columns:1fr}.planner .field:first-child,.planner .btn{grid-column:auto}
-      .dest{min-height:320px}.journey{padding:35px 23px}.steps{grid-template-columns:1fr}
-      .mood-panel{padding:24px}.moods{grid-template-columns:1fr 1fr}.cta-card{padding:52px 23px}.footer-grid{align-items:flex-start;flex-direction:column}
-      .form-grid{grid-template-columns:1fr}.form-grid .wide{grid-column:auto}
-    }
-
-    /* Premium opening logo animation — uses the exact supplied logo asset */
-    .brand-intro{
-      position:fixed;inset:0;z-index:9999;
-      display:grid;place-items:center;
-      background:
-        radial-gradient(circle at 50% 42%,rgba(169,216,238,.28),transparent 28rem),
-        radial-gradient(circle at 62% 60%,rgba(247,204,0,.11),transparent 22rem),
-        rgba(255,253,248,.98);
-      overflow:hidden;
-      transition:opacity .55s ease,visibility .55s ease;
-    }
-    .brand-intro.done{opacity:0;visibility:hidden;pointer-events:none}
-    .brand-intro::before,
-    .brand-intro::after{
-      content:"";position:absolute;border-radius:50%;filter:blur(1px);pointer-events:none
-    }
-    .brand-intro::before{
-      width:390px;height:390px;left:-160px;top:-170px;
-      border:1px solid rgba(39,160,189,.13);
-      box-shadow:0 0 0 55px rgba(39,160,189,.025),0 0 0 112px rgba(8,170,169,.018)
-    }
-    .brand-intro::after{
-      width:320px;height:320px;right:-145px;bottom:-145px;
-      border:1px solid rgba(255,159,0,.14);
-      box-shadow:0 0 0 48px rgba(247,204,0,.025),0 0 0 100px rgba(244,59,34,.018)
-    }
-    .intro-logo-wrap{
-      position:relative;width:min(520px,78vw);
-      opacity:0;transform:translateY(18px) scale(.94);
-      animation:introLogoIn .95s cubic-bezier(.2,.85,.25,1) .08s forwards;
-      filter:drop-shadow(0 24px 45px rgba(18,83,103,.11));
-      will-change:transform,opacity
-    }
-    .intro-logo-wrap img{width:100%;height:auto;display:block}
-    .intro-logo-wrap::after{
-      content:"";position:absolute;inset:4% -8%;
-      background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%,transparent 64%);
-      transform:translateX(-120%) skewX(-12deg);
-      mix-blend-mode:screen;pointer-events:none;
-      animation:introSweep 1.05s cubic-bezier(.2,.7,.2,1) .72s forwards
-    }
-    .intro-caption{
-      position:absolute;left:50%;bottom:clamp(48px,8vh,86px);transform:translateX(-50%);
-      white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;
-      color:#69848f;opacity:0;animation:introCaption .5s ease 1.02s forwards
-    }
-    .intro-caption::before{
-      content:"";display:inline-block;width:32px;height:1px;background:linear-gradient(90deg,var(--teal),var(--orange));
-      vertical-align:middle;margin:0 12px 3px 0
-    }
-    .intro-caption::after{
-      content:"";display:inline-block;width:32px;height:1px;background:linear-gradient(90deg,var(--orange),var(--coral));
-      vertical-align:middle;margin:0 0 3px 12px
-    }
-    body.intro-active{overflow:hidden}
-    body.intro-active .nav-shell{opacity:0;transform:translate(-50%,-12px)}
-    body.intro-complete .nav-shell{
-      animation:navArrival .7s cubic-bezier(.2,.8,.2,1) both
-    }
-    @keyframes introLogoIn{
-      0%{opacity:0;transform:translateY(18px) scale(.94);filter:blur(7px) drop-shadow(0 24px 45px rgba(18,83,103,.05))}
-      65%{opacity:1;transform:translateY(-2px) scale(1.015);filter:blur(0) drop-shadow(0 24px 45px rgba(18,83,103,.11))}
-      100%{opacity:1;transform:none;filter:blur(0) drop-shadow(0 24px 45px rgba(18,83,103,.11))}
-    }
-    @keyframes introSweep{to{transform:translateX(120%) skewX(-12deg)}}
-    @keyframes introCaption{to{opacity:1}}
-    @keyframes navArrival{
-      from{opacity:0;transform:translate(-50%,-12px)}
-      to{opacity:1;transform:translate(-50%,0)}
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      *{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
-    }
+    h1{font-size:clamp(54px,6.2vw,90px);line-height:.94;letter-spacing:-.065em;margin:24px 0 23px}.wash{display:inline-block;background:linear-gradient(110deg,var(--teal),var(--blue) 36%,var(--orange) 70%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:180% auto;animation:shimmer 7s linear infinite}
+    @keyframes shimmer{to{background-position:180% center}}.hero-copy p{font-size:18px;line-height:1.72;color:var(--muted);max-width:660px;margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{padding:15px 23px}
+    .micro{display:flex;align-items:center;gap:15px;margin-top:31px;color:#66808c;font-size:13px;font-weight:650}.dotline{display:flex}.dotline span{width:12px;height:12px;border-radius:50%;margin-left:-2px;border:2px solid #fff}
+    .visual{position:relative;min-height:610px;perspective:1200px}.orbit{position:absolute;left:0;top:7%;width:100%;height:86%;border:1px dashed rgba(39,160,189,.22);border-radius:48% 52% 51% 49%/59% 43% 57% 41%;animation:spin 24s linear infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}.sun{position:absolute;width:155px;height:155px;border-radius:50%;background:radial-gradient(circle at 35% 32%,#fff8b3,var(--yellow) 45%,var(--orange));right:18px;top:30px;box-shadow:0 0 80px rgba(247,204,0,.26)}
+    .plane-line{position:absolute;left:-18px;top:78px;width:84%;height:38%;border-top:3px solid rgba(8,170,169,.6);border-radius:50% 55% 0 0;transform:rotate(-12deg)}.plane{position:absolute;left:67%;top:4%;font-size:30px;animation:fly 4s ease-in-out infinite}
+    @keyframes fly{50%{transform:translate(16px,-13px) rotate(25deg)}}.postcard{position:absolute;overflow:hidden;border:9px solid rgba(255,255,255,.96);box-shadow:var(--shadow);background:#ddd;transition:.45s cubic-bezier(.2,.8,.2,1)}
+    .postcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,29,47,.52))}.postcard img{width:100%;height:100%;object-fit:cover;transition:transform .8s}.postcard:hover img{transform:scale(1.06)}
+    .postcard strong{position:absolute;z-index:3;left:18px;bottom:16px;color:#fff;font-size:17px}.p1{width:68%;height:58%;left:2%;top:18%;border-radius:35% 18% 30% 16%;transform:rotate(-4deg)}.p2{width:46%;height:44%;right:0;top:42%;border-radius:22% 38% 17% 33%;transform:rotate(6deg)}
+    .stamp{position:absolute;z-index:6;right:17%;bottom:3%;width:132px;height:132px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--coral);color:#fff;border:8px solid #fff;box-shadow:0 18px 35px rgba(244,59,34,.25);font-weight:900;transform:rotate(-9deg)}.stamp small{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+    .wave{position:absolute;left:0;right:0;bottom:-1px;height:90px;z-index:-1}.section{padding:100px 0;position:relative}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+    .section-head h2{font-size:clamp(38px,4.2vw,64px);letter-spacing:-.055em;line-height:1;margin:0}.section-head p{max-width:520px;color:var(--muted);line-height:1.7;margin:0}
+    .planner{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:34px;padding:24px;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr auto;gap:12px;align-items:end}
+    .field label{font-size:11px;font-weight:900;letter-spacing:.12em;text-transform:uppercase;color:#64808d;display:block;margin:0 0 8px 4px}.field select,.field input,.field textarea{width:100%;border-radius:16px;border:1px solid var(--line);background:#f9fcfc;color:var(--ink);padding:0 14px;font-weight:700;outline:none}.field select,.field input{height:52px}.field textarea{min-height:110px;padding-top:14px;resize:vertical}.field select:focus,.field input:focus,.field textarea:focus{border-color:var(--teal);box-shadow:0 0 0 4px rgba(8,170,169,.1)}
+    .planner .btn{height:52px}.result-note{margin:17px 4px 0;color:#56717f;font-size:14px;min-height:20px}
+    .service-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.service{padding:22px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.75);transition:.25s}.service:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(17,51,71,.08)}.service span{font-size:27px}.service b{display:block;margin:12px 0 6px}.service small{color:var(--muted);line-height:1.45}
+    .dest-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}.dest{position:relative;min-height:355px;border-radius:30px;overflow:hidden;background:#ddd;box-shadow:0 18px 55px rgba(17,51,71,.13);isolation:isolate;transition:.38s}.dest:hover{transform:translateY(-7px)}
+    .dest:nth-child(1),.dest:nth-child(4){grid-column:span 7}.dest:nth-child(2),.dest:nth-child(3){grid-column:span 5}.dest img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}.dest:hover img{transform:scale(1.055)}.dest::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,transparent 23%,rgba(5,35,51,.78) 100%)}.dest-body{position:absolute;z-index:2;inset:auto 25px 22px;color:#fff}.tag{display:inline-flex;background:rgba(255,255,255,.19);backdrop-filter:blur(12px);padding:7px 10px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}.dest h3{font-size:33px;letter-spacing:-.04em;margin:12px 0 4px}.dest p{margin:0;color:rgba(255,255,255,.88);font-size:14px}.dest-actions{display:flex;gap:9px;margin-top:16px}.mini-btn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff;padding:9px 12px;border-radius:999px;font-size:12px;font-weight:850;backdrop-filter:blur(12px)}.mini-btn.primary{background:#fff;color:var(--ink)}
+    .journey{border-radius:40px;padding:54px;background:linear-gradient(115deg,rgba(5,49,67,.98),rgba(8,109,126,.98));color:#fff;position:relative;overflow:hidden}.journey h2{font-size:clamp(40px,4vw,62px);letter-spacing:-.055em;margin:0 0 12px;max-width:780px}.journey>p{color:rgba(255,255,255,.7);max-width:650px;line-height:1.7}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}.step{padding:24px 17px 20px;border-top:1px solid rgba(255,255,255,.18);position:relative}.step::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--yellow);position:absolute;top:-6px;left:18px;box-shadow:0 0 0 8px rgba(247,204,0,.08)}.step:nth-child(2)::before{background:var(--teal)}.step:nth-child(3)::before{background:var(--orange)}.step:nth-child(4)::before{background:var(--coral)}.step b{font-size:12px;color:#9bdfe2;text-transform:uppercase;letter-spacing:.12em}.step h4{font-size:20px;margin:12px 0 8px}.step p{color:rgba(255,255,255,.68);font-size:13px;line-height:1.6;margin:0}
+    .mood-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px}.mood-panel{background:#fff;border:1px solid var(--line);border-radius:34px;padding:34px;box-shadow:0 24px 65px rgba(17,51,71,.08)}.mood-panel h3{font-size:34px;letter-spacing:-.045em;margin:0 0 8px}.mood-panel p{color:var(--muted);line-height:1.7}.moods{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:24px}.mood{border:1px solid var(--line);background:#fbfdfd;border-radius:20px;padding:18px;text-align:left;color:var(--ink);transition:.25s}.mood:hover,.mood.active{border-color:var(--teal);background:linear-gradient(145deg,#f0ffff,#fffaf1);transform:translateY(-2px)}.mood span{display:block;font-size:25px;margin-bottom:9px}.mood b{display:block}.mood small{color:#6c838e}
+    .itinerary{border-radius:34px;padding:31px;color:#fff;position:relative;overflow:hidden;min-height:100%;background:linear-gradient(145deg,var(--coral),var(--orange) 55%,var(--yellow))}.itinerary::after{content:"✈";position:absolute;font-size:180px;right:-35px;bottom:-55px;opacity:.11;transform:rotate(-18deg)}.itinerary h3{font-size:34px;margin:0 0 8px;letter-spacing:-.04em}.itinerary p{color:rgba(255,255,255,.82)}.route{margin-top:28px}.route-row{display:flex;gap:14px;align-items:flex-start;position:relative;padding:0 0 25px}.route-row:not(:last-child)::after{content:"";position:absolute;left:9px;top:21px;bottom:1px;border-left:1px dashed rgba(255,255,255,.55)}.route-dot{width:19px;height:19px;border-radius:50%;background:#fff;border:5px solid rgba(255,255,255,.25);box-shadow:0 0 0 2px #fff;flex:0 0 auto}.route-row b{display:block;font-size:15px}.route-row small{color:rgba(255,255,255,.76)}
+    .trust{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.trust-item{padding:24px;border-left:3px solid var(--teal);background:#fff;border-radius:0 22px 22px 0;box-shadow:0 16px 42px rgba(17,51,71,.06)}.trust-item:nth-child(2){border-color:var(--yellow)}.trust-item:nth-child(3){border-color:var(--orange)}.trust-item:nth-child(4){border-color:var(--coral)}.trust-item b{display:block;margin-bottom:7px}.trust-item p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+    .faq-list{max-width:920px;margin:auto}.faq{border-bottom:1px solid var(--line)}.faq button{width:100%;border:0;background:transparent;padding:22px 0;display:flex;justify-content:space-between;gap:18px;text-align:left;color:var(--ink);font-size:18px;font-weight:850}.faq button span:last-child{font-size:24px;color:var(--teal);transition:.2s}.faq.open button span:last-child{transform:rotate(45deg)}.faq-answer{max-height:0;overflow:hidden;color:var(--muted);line-height:1.7;transition:max-height .35s ease}.faq.open .faq-answer{max-height:240px;padding-bottom:20px}
+    .contact-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:26px}.contact-panel{border-radius:34px;padding:36px;background:linear-gradient(145deg,#0a7082,#08aaa9);color:#fff;position:relative;overflow:hidden}.contact-panel h3{font-size:38px;letter-spacing:-.05em;margin:0 0 12px}.contact-panel p{color:rgba(255,255,255,.78);line-height:1.65}.contact-list{display:grid;gap:12px;margin-top:30px}.contact-line{display:flex;gap:12px;align-items:flex-start;padding:15px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);border-radius:18px}.contact-line span{font-size:20px}.contact-line b{display:block}.contact-line small{color:rgba(255,255,255,.76)}.contact-form{background:#fff;border:1px solid var(--line);border-radius:34px;padding:30px;box-shadow:0 24px 65px rgba(17,51,71,.08)}.contact-form h3{font-size:30px;margin:0 0 7px}.contact-form>p{color:var(--muted);margin-top:0}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.wide{grid-column:1/-1}.contact-form input,.contact-form select,.contact-form textarea,.modal input,.modal select,.modal textarea{width:100%;border:1px solid var(--line);background:#fbfdfd;border-radius:14px;padding:0 13px;outline:none}.contact-form input,.contact-form select,.modal input,.modal select{height:50px}.contact-form textarea,.modal textarea{min-height:110px;padding-top:14px;resize:vertical}.form-note{font-size:12px;color:#78909b;margin-top:12px}
+    .final-cta{padding:85px 0 105px}.cta-card{position:relative;border-radius:44px;padding:68px 55px;overflow:hidden;text-align:center;color:#fff;background:linear-gradient(120deg,#118ca8,var(--teal) 42%,#1d74c9);box-shadow:0 35px 90px rgba(8,147,160,.22)}.cta-card h2{font-size:clamp(42px,5vw,68px);line-height:1;letter-spacing:-.055em;margin:0 auto 16px;max-width:820px}.cta-card p{max-width:610px;margin:0 auto 30px;color:rgba(255,255,255,.8);line-height:1.7}
+    footer{border-top:1px solid var(--line);padding:42px 0 28px;background:rgba(255,255,255,.56)}.footer-main{display:grid;grid-template-columns:1.25fr .75fr .9fr;gap:34px}.footer-brand img{width:190px}.footer-brand p{color:var(--muted);line-height:1.65;max-width:390px}.footer-links{display:grid;gap:10px}.footer-links b{margin-bottom:6px}.footer-links a{font-size:14px;color:#58727e}.footer-contact{display:grid;gap:8px;color:#58727e;font-size:14px}.footer-bottom{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-top:28px;margin-top:28px;border-top:1px solid var(--line);font-size:12px;color:#78909b}
+    .legal{padding:70px 0}.legal-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.legal-box{background:#fff;border:1px solid var(--line);border-radius:26px;padding:26px}.legal-box h3{margin-top:0}.legal-box p{color:var(--muted);line-height:1.65;font-size:14px}
+    .float-actions{position:fixed;right:18px;bottom:18px;z-index:65;display:grid;gap:10px}.float-actions a{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;color:#fff;box-shadow:0 16px 40px rgba(17,51,71,.18);font-size:20px}.wa{background:#1fab5b}.call{background:var(--blue)}
+    .mobile-sticky{display:none}.reveal{opacity:0;transform:translateY(30px);transition:.75s}.reveal.show{opacity:1;transform:none}
+    .modal{position:fixed;inset:0;background:rgba(8,30,44,.55);backdrop-filter:blur(10px);z-index:100;display:none;place-items:center;padding:18px}.modal.open{display:grid}.modal-card{width:min(650px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:30px;padding:28px;box-shadow:0 35px 100px rgba(0,0,0,.25);animation:pop .3s ease}@keyframes pop{from{opacity:0;transform:scale(.96) translateY(10px)}}.modal-top{display:flex;justify-content:space-between;gap:15px;align-items:center}.modal-top h3{font-size:28px;margin:0}.close{border:0;background:#f2f7f8;width:42px;height:42px;border-radius:50%;font-size:20px}.summary{display:none;margin-top:18px;padding:17px;border-radius:16px;background:#f1fbfb;color:#315765;line-height:1.6}.form-actions{display:flex;gap:10px;margin-top:17px;flex-wrap:wrap}
+    .brand-intro{position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:radial-gradient(circle at 50% 42%,rgba(169,216,238,.28),transparent 28rem),radial-gradient(circle at 62% 60%,rgba(247,204,0,.11),transparent 22rem),rgba(255,253,248,.98);overflow:hidden;transition:opacity .55s ease,visibility .55s ease}.brand-intro.done{opacity:0;visibility:hidden;pointer-events:none}.intro-logo-wrap{position:relative;width:min(520px,78vw);opacity:0;transform:translateY(18px) scale(.94);animation:introLogoIn .95s cubic-bezier(.2,.85,.25,1) .08s forwards;filter:drop-shadow(0 24px 45px rgba(18,83,103,.11))}.intro-logo-wrap img{width:100%}.intro-logo-wrap::after{content:"";position:absolute;inset:4% -8%;background:linear-gradient(110deg,transparent 36%,rgba(255,255,255,0) 42%,rgba(255,255,255,.92) 50%,rgba(255,255,255,0) 58%,transparent 64%);transform:translateX(-120%) skewX(-12deg);mix-blend-mode:screen;animation:introSweep 1.05s cubic-bezier(.2,.7,.2,1) .72s forwards}.intro-caption{position:absolute;left:50%;bottom:clamp(48px,8vh,86px);transform:translateX(-50%);white-space:nowrap;font-size:11px;font-weight:900;letter-spacing:.24em;text-transform:uppercase;color:#69848f;opacity:0;animation:introCaption .5s ease 1.02s forwards}@keyframes introLogoIn{0%{opacity:0;transform:translateY(18px) scale(.94);filter:blur(7px)}65%{opacity:1;transform:translateY(-2px) scale(1.015);filter:blur(0)}100%{opacity:1;transform:none;filter:blur(0)}}@keyframes introSweep{to{transform:translateX(120%) skewX(-12deg)}}@keyframes introCaption{to{opacity:1}}
+    @media(max-width:980px){.navlinks,.nav-cta{display:none}.menu{display:block}.hero-grid,.mood-grid,.contact-grid{grid-template-columns:1fr}.visual{min-height:520px}.planner{grid-template-columns:1fr 1fr}.planner .field:first-child{grid-column:1/-1}.planner .btn{grid-column:1/-1}.service-strip{grid-template-columns:repeat(2,1fr)}.dest:nth-child(n){grid-column:span 12}.steps,.trust{grid-template-columns:1fr 1fr}.footer-main{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}}
+    @media(max-width:640px){.wrap{width:min(100% - 24px,1180px)}.nav-shell{width:calc(100% - 18px);top:8px}.brand img{width:150px;height:44px}.hero{min-height:auto;padding:108px 0 42px}.hero-grid{gap:28px}h1{font-size:50px}.hero-copy p{font-size:16px}.visual{min-height:420px}.sun{width:90px;height:90px}.p1{width:73%;height:54%}.p2{width:49%;height:42%}.stamp{width:96px;height:96px;font-size:13px}.section{padding:68px 0}.section-head{display:block}.section-head p{margin-top:14px}.planner{grid-template-columns:1fr;padding:18px}.planner .field:first-child,.planner .btn{grid-column:auto}.service-strip{grid-template-columns:1fr}.dest{min-height:315px}.journey{padding:34px 22px}.steps,.trust{grid-template-columns:1fr}.mood-panel{padding:23px}.moods{grid-template-columns:1fr 1fr}.form-grid{grid-template-columns:1fr}.wide{grid-column:auto}.contact-panel,.contact-form{padding:24px}.cta-card{padding:50px 22px}.footer-main,.legal-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{flex-direction:column;align-items:flex-start}.float-actions{display:none}.mobile-sticky{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:10px;right:10px;bottom:10px;z-index:64;border-radius:18px;overflow:hidden;box-shadow:0 18px 45px rgba(17,51,71,.2)}.mobile-sticky a{padding:14px 10px;text-align:center;color:#fff;font-weight:900}.mobile-sticky .call-link{background:var(--blue)}.mobile-sticky .wa-link{background:#1fab5b}body{padding-bottom:68px}.intro-caption{font-size:9px;letter-spacing:.15em}.intro-logo-wrap{width:82vw}}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
   </style>
 </head>
 <body class="intro-active">
-
-  <div class="brand-intro" id="brandIntro" aria-hidden="true">
-    <div class="intro-logo-wrap">
-      <img src="assets/mytravel4sure-logo.png" alt="">
-    </div>
-    <div class="intro-caption">Curated holidays • made personal</div>
-  </div>
+  <div class="brand-intro" id="brandIntro" aria-hidden="true"><div class="intro-logo-wrap"><img src="assets/mytravel4sure-logo.png" alt=""></div><div class="intro-caption">Curated holidays • made personal</div></div>
 
   <header class="nav-shell" id="nav">
     <nav>
       <a class="brand" href="#home" aria-label="MyTravel4Sure home"><img src="assets/mytravel4sure-logo.png" alt="MyTravel4Sure logo"></a>
       <div class="navlinks">
-        <a href="#escapes">Escapes</a>
-        <a href="#journey">How it works</a>
-        <a href="#planner">Holiday planner</a>
+        <a href="#holidays">Holidays</a><a href="#planner">Planner</a><a href="#journey">How it works</a><a href="#why">Why us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
       </div>
       <button class="nav-cta open-enquiry">Plan my holiday</button>
-      <button class="menu" aria-label="Open menu" onclick="document.querySelector('#planner').scrollIntoView()">☰</button>
+      <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#holidays">Holidays</a><a href="#planner">Planner</a><a href="#journey">How it works</a><a href="#why">Why us</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+        <button class="open-enquiry">Plan my holiday</button>
+      </div>
     </nav>
   </header>
 
@@ -336,42 +103,39 @@
     <section class="hero" id="home">
       <div class="wrap hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow"><i></i> Curated holidays • made personal</span>
+          <span class="eyebrow"><i></i> Delhi to the world • holidays made personal</span>
           <h1>Go once.<br><span class="wash">Remember forever.</span></h1>
           <p>MyTravel4Sure turns a one-time holiday into a beautifully planned experience — destination ideas, stay style, pacing and moments shaped around the way you actually want to travel.</p>
-          <div class="hero-actions">
-            <button class="btn btn-primary open-enquiry">Design my escape</button>
-            <button class="btn btn-secondary" onclick="document.querySelector('#escapes').scrollIntoView()">Explore holidays ↓</button>
-          </div>
-          <div class="micro">
-            <div class="dotline"><span style="background:#b2daee"></span><span style="background:#28a0bc"></span><span style="background:#09aaa9"></span><span style="background:#f8ca00"></span><span style="background:#ff9f00"></span><span style="background:#f43b22"></span></div>
-            Your holiday, shaped around your mood — not a generic template.
-          </div>
+          <div class="hero-actions"><button class="btn btn-primary open-enquiry">Design my escape</button><a class="btn btn-secondary" href="#holidays">Explore holidays ↓</a></div>
+          <div class="micro"><div class="dotline"><span style="background:#b2daee"></span><span style="background:#28a0bc"></span><span style="background:#09aaa9"></span><span style="background:#f8ca00"></span><span style="background:#ff9f00"></span><span style="background:#f43b22"></span></div>Your holiday, shaped around your mood — not a generic template.</div>
         </div>
         <div class="visual reveal">
           <div class="orbit"></div><div class="sun"></div><div class="plane-line"></div><div class="plane">✈️</div>
-          <figure class="postcard p1">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=86" alt="Tropical beach holiday">
-            <strong>Slow mornings. Blue horizons.</strong>
-          </figure>
-          <figure class="postcard p2">
-            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=86" alt="Mountain holiday">
-            <strong>Big views. Quiet moments.</strong>
-          </figure>
+          <figure class="postcard p1"><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=86" alt="Tropical beach holiday"><strong>Slow mornings. Blue horizons.</strong></figure>
+          <figure class="postcard p2"><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1000&q=86" alt="Mountain holiday"><strong>Big views. Quiet moments.</strong></figure>
           <div class="stamp"><div><small>travel<br>your way</small><br>4SURE</div></div>
         </div>
       </div>
       <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true"><path fill="#fff" d="M0,68 C240,116 470,15 720,63 C980,112 1180,30 1440,64 L1440,100 L0,100 Z"/></svg>
     </section>
 
+    <section class="section" style="padding-top:70px">
+      <div class="wrap">
+        <div class="service-strip reveal">
+          <div class="service"><span>🌍</span><b>International Holidays</b><small>City breaks, islands, culture and long-haul escapes.</small></div>
+          <div class="service"><span>🇮🇳</span><b>India Holidays</b><small>Mountains, beaches, heritage and family routes.</small></div>
+          <div class="service"><span>💞</span><b>Honeymoons</b><small>Private pacing, beautiful stays and memorable moments.</small></div>
+          <div class="service"><span>👨‍👩‍👧‍👦</span><b>Family Trips</b><small>Balanced itineraries with less rushing and smarter logistics.</small></div>
+          <div class="service"><span>✨</span><b>Custom Holidays</b><small>Built around your dates, budget range and travel style.</small></div>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="planner">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2>Find your holiday<br>energy.</h2>
-          <p>Start with the feeling, not a brochure. Choose a travel mood and we’ll surface a matching style of escape below.</p>
-        </div>
+        <div class="section-head reveal"><h2>Find your holiday<br>energy.</h2><p>Start with the feeling, not a brochure. Choose a travel mood and we’ll surface a matching style of escape below.</p></div>
         <div class="planner reveal">
-          <div class="field"><label>Where from</label><input id="origin" placeholder="e.g. Ranchi / Delhi"></div>
+          <div class="field"><label>Where from</label><input id="origin" value="Delhi" placeholder="e.g. Delhi"></div>
           <div class="field"><label>Holiday mood</label><select id="moodSelect"><option value="all">Surprise me</option><option value="beach">Beach & island</option><option value="mountain">Mountain & nature</option><option value="city">City & culture</option><option value="romance">Romantic escape</option></select></div>
           <div class="field"><label>Duration</label><select id="duration"><option>3–4 nights</option><option>5–7 nights</option><option>8–10 nights</option><option>10+ nights</option></select></div>
           <div class="field"><label>Travellers</label><select id="travellers"><option>2 travellers</option><option>Solo</option><option>Family</option><option>Friends group</option></select></div>
@@ -381,191 +145,184 @@
       </div>
     </section>
 
-    <section class="section" id="escapes" style="padding-top:30px">
+    <section class="section" id="holidays" style="padding-top:30px">
       <div class="wrap">
-        <div class="section-head reveal">
-          <h2>Escapes worth<br>taking once.</h2>
-          <p>These are inspiration routes, not fixed packages. Pick the feeling you like and MyTravel4Sure can shape the final plan around your dates, pace and preferences.</p>
-        </div>
+        <div class="section-head reveal"><h2>Escapes worth<br>taking once.</h2><p>Inspiration routes, not rigid packages. Pick a destination and send a pre-filled enquiry in one tap.</p></div>
         <div class="dest-grid" id="destGrid">
-          <article class="dest reveal" data-mood="beach romance">
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1500&q=86" alt="Maldives island resort">
-            <div class="dest-body"><span class="tag">Island reset</span><h3>Maldives</h3><p>Lagoon mornings • private time • barefoot evenings</p></div>
-          </article>
-          <article class="dest reveal" data-mood="city romance">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=86" alt="Dubai skyline">
-            <div class="dest-body"><span class="tag">City spectacle</span><h3>Dubai</h3><p>Skyline stays • desert sunset • polished nights</p></div>
-          </article>
-          <article class="dest reveal" data-mood="mountain romance">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=86" alt="Scenic nature travel">
-            <div class="dest-body"><span class="tag">Nature slow-down</span><h3>Kashmir</h3><p>Valleys • lakes • mountain air • unhurried days</p></div>
-          </article>
-          <article class="dest reveal" data-mood="beach city">
-            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1500&q=86" alt="Bali tropical landscape">
-            <div class="dest-body"><span class="tag">Tropical culture</span><h3>Bali</h3><p>Rice fields • beach clubs • temples • wellness</p></div>
-          </article>
+          <article class="dest reveal" data-mood="beach romance" data-place="Maldives"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1500&q=86" alt="Maldives island resort"><div class="dest-body"><span class="tag">Island reset</span><h3>Maldives</h3><p>Lagoon mornings • private time • barefoot evenings</p><div class="dest-actions"><button class="mini-btn primary enquire-place">Enquire now</button><button class="mini-btn details-place">Use in planner</button></div></div></article>
+          <article class="dest reveal" data-mood="city romance" data-place="Dubai"><img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1200&q=86" alt="Dubai skyline"><div class="dest-body"><span class="tag">City spectacle</span><h3>Dubai</h3><p>Skyline stays • desert sunset • polished nights</p><div class="dest-actions"><button class="mini-btn primary enquire-place">Enquire now</button><button class="mini-btn details-place">Use in planner</button></div></div></article>
+          <article class="dest reveal" data-mood="mountain romance" data-place="Kashmir"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=86" alt="Scenic mountain travel"><div class="dest-body"><span class="tag">Nature slow-down</span><h3>Kashmir</h3><p>Valleys • lakes • mountain air • unhurried days</p><div class="dest-actions"><button class="mini-btn primary enquire-place">Enquire now</button><button class="mini-btn details-place">Use in planner</button></div></div></article>
+          <article class="dest reveal" data-mood="beach city" data-place="Bali"><img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1500&q=86" alt="Bali tropical landscape"><div class="dest-body"><span class="tag">Tropical culture</span><h3>Bali</h3><p>Rice fields • beach clubs • temples • wellness</p><div class="dest-actions"><button class="mini-btn primary enquire-place">Enquire now</button><button class="mini-btn details-place">Use in planner</button></div></div></article>
         </div>
       </div>
     </section>
 
     <section class="section" id="journey">
-      <div class="wrap">
-        <div class="journey reveal">
-          <h2>From “where should we go?” to a holiday that flows.</h2>
-          <p>A premium trip feels effortless because the decisions happen in the right order.</p>
-          <div class="steps">
-            <div class="step"><b>01 • Discover</b><h4>Your travel personality</h4><p>Dates, people, pace, interests and must-have moments.</p></div>
-            <div class="step"><b>02 • Curate</b><h4>The right route</h4><p>A focused mix of destinations, stays and experiences.</p></div>
-            <div class="step"><b>03 • Refine</b><h4>Make it yours</h4><p>Adjust the rhythm before you lock the final holiday plan.</p></div>
-            <div class="step"><b>04 • Travel</b><h4>Enjoy the story</h4><p>One clear itinerary so the holiday feels smooth, not scattered.</p></div>
-          </div>
-          <div class="feature-track" aria-hidden="true">
-            <div class="mover">
-              <span class="feature-pill">✦ Beach escapes</span><span class="feature-pill">✦ Honeymoon ideas</span><span class="feature-pill">✦ Family holidays</span><span class="feature-pill">✦ Mountain breaks</span><span class="feature-pill">✦ International cities</span><span class="feature-pill">✦ Slow travel</span>
-              <span class="feature-pill">✦ Beach escapes</span><span class="feature-pill">✦ Honeymoon ideas</span><span class="feature-pill">✦ Family holidays</span><span class="feature-pill">✦ Mountain breaks</span><span class="feature-pill">✦ International cities</span><span class="feature-pill">✦ Slow travel</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="wrap"><div class="journey reveal"><h2>From “where should we go?” to a holiday that flows.</h2><p>A premium trip feels effortless because the decisions happen in the right order.</p><div class="steps">
+        <div class="step"><b>01 • Discover</b><h4>Your travel personality</h4><p>Dates, people, pace, interests and must-have moments.</p></div>
+        <div class="step"><b>02 • Curate</b><h4>The right route</h4><p>A focused mix of destinations, stays and experiences.</p></div>
+        <div class="step"><b>03 • Refine</b><h4>Make it yours</h4><p>Adjust the rhythm before you lock the final holiday plan.</p></div>
+        <div class="step"><b>04 • Travel</b><h4>Enjoy the story</h4><p>One clear itinerary so the holiday feels smooth, not scattered.</p></div>
+      </div></div></div>
     </section>
 
     <section class="section">
       <div class="wrap mood-grid">
-        <div class="mood-panel reveal">
-          <h3>Choose the feeling.</h3>
-          <p>Tap a mood and watch your sample trip story change. This is a lightweight interactive planner — useful even before you send an enquiry.</p>
-          <div class="moods">
-            <button class="mood active" data-story="beach"><span>🌊</span><b>Unplug</b><small>Beach, water, slow mornings</small></button>
-            <button class="mood" data-story="romance"><span>✨</span><b>Reconnect</b><small>Private time, beautiful stays</small></button>
-            <button class="mood" data-story="mountain"><span>⛰️</span><b>Breathe</b><small>Nature, drives, cool air</small></button>
-            <button class="mood" data-story="city"><span>🌆</span><b>Explore</b><small>Culture, food, city energy</small></button>
-          </div>
-        </div>
-        <aside class="itinerary reveal">
-          <span class="tag">Sample flow</span>
-          <h3 id="storyTitle">The Unplug Escape</h3>
-          <p id="storyDesc">A gentle beach-first rhythm with enough space to actually feel like you are on holiday.</p>
-          <div class="route" id="route"></div>
-        </aside>
+        <div class="mood-panel reveal"><h3>Choose the feeling.</h3><p>Tap a mood and watch your sample trip story change.</p><div class="moods">
+          <button class="mood active" data-story="beach"><span>🌊</span><b>Unplug</b><small>Beach, water, slow mornings</small></button>
+          <button class="mood" data-story="romance"><span>✨</span><b>Reconnect</b><small>Private time, beautiful stays</small></button>
+          <button class="mood" data-story="mountain"><span>⛰️</span><b>Breathe</b><small>Nature, drives, cool air</small></button>
+          <button class="mood" data-story="city"><span>🌆</span><b>Explore</b><small>Culture, food, city energy</small></button>
+        </div></div>
+        <aside class="itinerary reveal"><span class="tag">Sample flow</span><h3 id="storyTitle">The Unplug Escape</h3><p id="storyDesc">A gentle beach-first rhythm with enough space to actually feel like you are on holiday.</p><div class="route" id="route"></div></aside>
       </div>
     </section>
 
-    <section class="final-cta">
+    <section class="section" id="why">
       <div class="wrap">
-        <div class="cta-card reveal">
-          <h2>Your next “remember when…” starts here.</h2>
-          <p>Tell us the mood, dates and people. Start with a simple holiday brief and shape the trip from there.</p>
-          <button class="btn btn-secondary open-enquiry">Start my holiday brief →</button>
+        <div class="section-head reveal"><h2>Designed to feel<br>clear, not chaotic.</h2><p>Our planning experience is built around clarity — fewer random options, stronger routing and direct communication.</p></div>
+        <div class="trust reveal">
+          <div class="trust-item"><b>Personalized planning</b><p>Every enquiry starts with your dates, group, pace and travel mood.</p></div>
+          <div class="trust-item"><b>Delhi-based support</b><p>Easy phone and WhatsApp contact for planning discussions and updates.</p></div>
+          <div class="trust-item"><b>Transparent planning</b><p>Know what is being planned before you move ahead with the final booking.</p></div>
+          <div class="trust-item"><b>Human help</b><p>When you need to talk, call or WhatsApp directly instead of getting stuck in forms.</p></div>
         </div>
       </div>
     </section>
+
+    <section class="section" id="faq">
+      <div class="wrap">
+        <div class="section-head reveal"><h2>Questions before<br>you pack?</h2><p>Quick answers to the things travellers usually want to know before sending an enquiry.</p></div>
+        <div class="faq-list reveal">
+          <div class="faq"><button><span>Do you offer fixed packages or customized holidays?</span><span>+</span></button><div class="faq-answer">The website is focused on customized holiday enquiries. You can use the planner or send a destination-specific brief and refine it with the team.</div></div>
+          <div class="faq"><button><span>Can I plan from Delhi for international destinations?</span><span>+</span></button><div class="faq-answer">Yes. The enquiry flow supports Delhi as the default departure city, and you can specify any destination, date range and traveller type.</div></div>
+          <div class="faq"><button><span>How do I get a quote?</span><span>+</span></button><div class="faq-answer">Use “Plan my holiday” or any destination “Enquire now” button. You can send the generated brief directly on WhatsApp to 9810958069.</div></div>
+          <div class="faq"><button><span>Can I call instead of filling the form?</span><span>+</span></button><div class="faq-answer">Yes. Use the Call button on desktop or the sticky Call button on mobile to dial 9810958069 directly.</div></div>
+          <div class="faq"><button><span>Are prices shown on the website?</span><span>+</span></button><div class="faq-answer">Not currently. Final pricing depends on travel dates, availability, stay category, flight options and the exact itinerary.</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap contact-grid">
+        <div class="contact-panel reveal">
+          <span class="tag">Delhi contact</span><h3>Talk to a real person.</h3><p>Have a destination in mind or need help choosing? Call, WhatsApp or send a quick holiday brief.</p>
+          <div class="contact-list">
+            <a class="contact-line" href="tel:+919810958069"><span>📞</span><div><b>Call us</b><small>+91 98109 58069</small></div></a>
+            <a class="contact-line" href="https://wa.me/919810958069?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday." target="_blank" rel="noopener"><span>💬</span><div><b>WhatsApp</b><small>Start a holiday conversation</small></div></a>
+            <a class="contact-line" href="mailto:hello@mytravel4sure.com"><span>✉️</span><div><b>Email</b><small>hello@mytravel4sure.com</small></div></a>
+            <div class="contact-line"><span>📍</span><div><b>Delhi office</b><small>Connaught Place, New Delhi – 110001</small></div></div>
+          </div>
+        </div>
+        <div class="contact-form reveal">
+          <h3>Send a holiday brief</h3><p>We’ll turn this into a ready-to-send WhatsApp enquiry.</p>
+          <div class="form-grid">
+            <input id="cName" placeholder="Your name" aria-label="Your name">
+            <input id="cPhone" placeholder="Phone / WhatsApp" aria-label="Phone or WhatsApp">
+            <input id="cDestination" placeholder="Destination / idea" aria-label="Destination">
+            <select id="cTravelers" aria-label="Travellers"><option>2 travellers</option><option>Solo</option><option>Family</option><option>Friends group</option></select>
+            <input class="wide" id="cDates" placeholder="Preferred dates / month" aria-label="Preferred dates">
+            <textarea class="wide" id="cNotes" placeholder="Hotel style, budget range, must-have experiences, anything else…" aria-label="Trip notes"></textarea>
+          </div>
+          <div class="form-actions"><button class="btn btn-primary" id="sendContactWa">Send on WhatsApp</button><a class="btn btn-secondary" href="tel:+919810958069">Call instead</a></div>
+          <div class="form-note">Email and office address shown here are placeholder details and should be replaced before a final commercial launch.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta"><div class="wrap"><div class="cta-card reveal"><h2>Your next “remember when…” starts here.</h2><p>Tell us the mood, dates and people. Start with a simple holiday brief and shape the trip from there.</p><button class="btn btn-secondary open-enquiry">Start my holiday brief →</button></div></div></section>
+
+    <section class="legal" id="legal"><div class="wrap legal-grid">
+      <div class="legal-box"><h3>Privacy</h3><p>Enquiry details are used to respond to your travel request. Do not submit sensitive identity, payment or passport information through this website form.</p></div>
+      <div class="legal-box"><h3>Booking & cancellation</h3><p>Package pricing, availability, cancellation terms and supplier conditions should be confirmed in writing before any payment. Final terms may vary by airline, hotel and travel date.</p></div>
+    </div></section>
   </main>
 
   <footer>
-    <div class="wrap footer-grid">
-      <img src="assets/mytravel4sure-logo.png" alt="MyTravel4Sure">
-      <div>Premium holiday planning experience • Website concept</div>
-      <div class="palette" aria-label="MyTravel4Sure palette">
-        <i style="background:#b2daee"></i><i style="background:#28a0bc"></i><i style="background:#09aaa9"></i><i style="background:#f8ca00"></i><i style="background:#ff9f00"></i><i style="background:#f43b22"></i>
+    <div class="wrap">
+      <div class="footer-main">
+        <div class="footer-brand"><img src="assets/mytravel4sure-logo.png" alt="MyTravel4Sure"><p>Premium holiday planning for travellers who want a smoother, more personal way to plan memorable trips.</p></div>
+        <div class="footer-links"><b>Explore</b><a href="#holidays">Holidays</a><a href="#planner">Holiday planner</a><a href="#journey">How it works</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><a href="#legal">Privacy & terms</a></div>
+        <div class="footer-contact"><b>Contact</b><a href="tel:+919810958069">+91 98109 58069</a><a href="mailto:hello@mytravel4sure.com">hello@mytravel4sure.com</a><span>Connaught Place, New Delhi – 110001</span><span style="font-size:11px;color:#93a5ad">Email/address are placeholder details.</span></div>
       </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> MyTravel4Sure. All rights reserved.</span><span>Delhi • India</span></div>
     </div>
   </footer>
 
+  <div class="float-actions"><a class="call" href="tel:+919810958069" aria-label="Call MyTravel4Sure">☎</a><a class="wa" href="https://wa.me/919810958069?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday." target="_blank" rel="noopener" aria-label="WhatsApp MyTravel4Sure">◉</a></div>
+  <div class="mobile-sticky"><a class="call-link" href="tel:+919810958069">☎ Call</a><a class="wa-link" href="https://wa.me/919810958069?text=Hi%20MyTravel4Sure%2C%20I%20want%20to%20plan%20a%20holiday." target="_blank" rel="noopener">WhatsApp</a></div>
+
   <div class="modal" id="enquiryModal" role="dialog" aria-modal="true" aria-labelledby="enquiryTitle">
     <div class="modal-card">
-      <div class="modal-top"><div><small style="font-weight:900;color:#2e8797;text-transform:uppercase;letter-spacing:.12em">Holiday brief</small><h3 id="enquiryTitle">Build your first trip brief</h3></div><button class="close" id="closeModal">×</button></div>
-      <div class="form-grid">
-        <input id="name" placeholder="Your name">
-        <input id="phone" placeholder="Phone / WhatsApp">
-        <select id="tripMood"><option>Beach & island</option><option>Mountain & nature</option><option>City & culture</option><option>Romantic escape</option><option>Family holiday</option></select>
-        <input id="tripDates" placeholder="Preferred month / dates">
-        <input class="wide" id="notes" placeholder="Anything you definitely want in this holiday?">
+      <div class="modal-top"><div><small style="font-weight:900;color:#2e8797;text-transform:uppercase;letter-spacing:.12em">Holiday brief</small><h3 id="enquiryTitle">Build your first trip brief</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div>
+      <div class="form-grid" style="margin-top:20px">
+        <input id="name" placeholder="Your name"><input id="phone" placeholder="Phone / WhatsApp">
+        <input id="tripDestination" placeholder="Destination / idea"><select id="tripMood"><option>Beach & island</option><option>Mountain & nature</option><option>City & culture</option><option>Romantic escape</option><option>Family holiday</option></select>
+        <input class="wide" id="tripDates" placeholder="Preferred month / dates"><textarea class="wide" id="notes" placeholder="Anything you definitely want in this holiday?"></textarea>
       </div>
-      <div class="form-actions"><button class="btn btn-primary" id="buildBrief">Create holiday brief</button><button class="btn btn-secondary" id="copyBrief" style="display:none">Copy brief</button></div>
+      <div class="form-actions"><button class="btn btn-primary" id="sendWa">Send on WhatsApp</button><button class="btn btn-secondary" id="copyBrief">Copy brief</button></div>
       <div class="summary" id="briefSummary"></div>
     </div>
   </div>
 
 <script>
-  const nav = document.getElementById('nav');
-  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+const PHONE='919810958069';
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30));
+const reveal=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');reveal.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
 
-  const reveal = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');reveal.unobserve(e.target)}})
-  },{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(el=>reveal.observe(el));
+const menuBtn=document.getElementById('menuBtn'),mobileMenu=document.getElementById('mobileMenu');
+menuBtn.addEventListener('click',()=>{const open=mobileMenu.classList.toggle('open');menuBtn.setAttribute('aria-expanded',open);menuBtn.textContent=open?'×':'☰'});
+mobileMenu.querySelectorAll('a,button').forEach(el=>el.addEventListener('click',()=>{mobileMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰'}));
 
-  document.querySelectorAll('.open-enquiry').forEach(b=>b.addEventListener('click',()=>document.getElementById('enquiryModal').classList.add('open')));
-  document.getElementById('closeModal').onclick=()=>document.getElementById('enquiryModal').classList.remove('open');
-  document.getElementById('enquiryModal').addEventListener('click',e=>{if(e.target.id==='enquiryModal')e.currentTarget.classList.remove('open')});
+const modal=document.getElementById('enquiryModal');
+function openModal(place=''){modal.classList.add('open');document.body.style.overflow='hidden';if(place)document.getElementById('tripDestination').value=place;setTimeout(()=>document.getElementById('name').focus(),80)}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow=''}
+document.querySelectorAll('.open-enquiry').forEach(b=>b.addEventListener('click',()=>openModal()));
+document.getElementById('closeModal').onclick=closeModal;
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 
-  const cards=[...document.querySelectorAll('.dest')];
-  document.getElementById('matchBtn').onclick=()=>{
-    const mood=document.getElementById('moodSelect').value;
-    const origin=(document.getElementById('origin').value||'your city').trim();
-    let n=0;
-    cards.forEach(c=>{
-      const ok=mood==='all'||c.dataset.mood.includes(mood);
-      c.style.display=ok?'block':'none'; if(ok)n++;
-    });
-    document.getElementById('resultNote').textContent=`Showing ${n} inspiration ${n===1?'route':'routes'} for ${document.getElementById('duration').value.toLowerCase()} from ${origin}.`;
-    document.getElementById('escapes').scrollIntoView({behavior:'smooth'});
-  };
+document.querySelectorAll('.enquire-place').forEach(btn=>btn.addEventListener('click',e=>openModal(e.currentTarget.closest('.dest').dataset.place)));
+document.querySelectorAll('.details-place').forEach(btn=>btn.addEventListener('click',e=>{document.getElementById('resultNote').textContent=e.currentTarget.closest('.dest').dataset.place+' selected. Tell us your dates and travellers below.';document.getElementById('planner').scrollIntoView({behavior:'smooth'})}));
 
-  const stories={
-    beach:{title:'The Unplug Escape',desc:'A gentle beach-first rhythm with enough space to actually feel like you are on holiday.',rows:[['Day 1','Arrive • settle in • sunset walk'],['Day 2','Water morning • long lunch • free evening'],['Day 3','Island experience • golden-hour pause'],['Day 4','Slow breakfast • last swim • fly home']]},
-    romance:{title:'The Reconnect Escape',desc:'Beautiful stays, less rushing and a few well-timed moments that feel genuinely special.',rows:[['Day 1','Private arrival • easy evening'],['Day 2','Late breakfast • signature experience'],['Day 3','Free morning • sunset dinner'],['Day 4','Memory stop • unhurried departure']]},
-    mountain:{title:'The Breathe Escape',desc:'Fresh air, scenic movement and enough stillness to let the destination do the work.',rows:[['Day 1','Scenic arrival • warm check-in'],['Day 2','Viewpoint drive • local lunch'],['Day 3','Nature walk • fireside evening'],['Day 4','Slow morning • valley goodbye']]},
-    city:{title:'The Explore Escape',desc:'A high-energy city break balanced with smart pacing, food and local culture.',rows:[['Day 1','Check-in • neighbourhood walk'],['Day 2','Icons • local food • night view'],['Day 3','Culture • shopping • free evening'],['Day 4','Brunch • final stop • departure']]}
-  };
-  function renderStory(key){
-    const s=stories[key];document.getElementById('storyTitle').textContent=s.title;document.getElementById('storyDesc').textContent=s.desc;
-    document.getElementById('route').innerHTML=s.rows.map(r=>`<div class="route-row"><span class="route-dot"></span><div><b>${r[0]}</b><small>${r[1]}</small></div></div>`).join('');
-  }
-  renderStory('beach');
-  document.querySelectorAll('.mood').forEach(b=>b.onclick=()=>{
-    document.querySelectorAll('.mood').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderStory(b.dataset.story)
-  });
+const cards=[...document.querySelectorAll('.dest')];
+document.getElementById('matchBtn').onclick=()=>{
+  const mood=document.getElementById('moodSelect').value,origin=(document.getElementById('origin').value||'Delhi').trim();let n=0;
+  cards.forEach(c=>{const ok=mood==='all'||c.dataset.mood.includes(mood);c.style.display=ok?'block':'none';if(ok)n++});
+  document.getElementById('resultNote').textContent=`Showing ${n} inspiration ${n===1?'route':'routes'} for ${document.getElementById('duration').value.toLowerCase()} from ${origin}.`;
+  document.getElementById('holidays').scrollIntoView({behavior:'smooth'})
+};
 
-  let briefText='';
-  document.getElementById('buildBrief').onclick=()=>{
-    const name=document.getElementById('name').value.trim();
-    const phone=document.getElementById('phone').value.trim();
-    if(!name||!phone){alert('Please add your name and phone / WhatsApp number.');return}
-    briefText=`MyTravel4Sure Holiday Brief\nName: ${name}\nPhone/WhatsApp: ${phone}\nMood: ${document.getElementById('tripMood').value}\nPreferred dates: ${document.getElementById('tripDates').value||'Flexible'}\nNotes: ${document.getElementById('notes').value||'No extra notes'}`;
-    const box=document.getElementById('briefSummary');
-    box.style.display='block';box.innerHTML='<b>Your brief is ready.</b><br>'+briefText.replace(/\n/g,'<br>');
-    document.getElementById('copyBrief').style.display='inline-block';
-  };
-  document.getElementById('copyBrief').onclick=async()=>{
-    await navigator.clipboard.writeText(briefText);
-    const b=document.getElementById('copyBrief');b.textContent='Copied ✓';setTimeout(()=>b.textContent='Copy brief',1400)
-  };
+const stories={
+beach:{title:'The Unplug Escape',desc:'A gentle beach-first rhythm with enough space to actually feel like you are on holiday.',rows:[['Day 1','Arrive • settle in • sunset walk'],['Day 2','Water morning • long lunch • free evening'],['Day 3','Island experience • golden-hour pause'],['Day 4','Slow breakfast • last swim • fly home']]},
+romance:{title:'The Reconnect Escape',desc:'Beautiful stays, less rushing and a few well-timed moments that feel genuinely special.',rows:[['Day 1','Private arrival • easy evening'],['Day 2','Late breakfast • signature experience'],['Day 3','Free morning • sunset dinner'],['Day 4','Memory stop • unhurried departure']]},
+mountain:{title:'The Breathe Escape',desc:'Fresh air, scenic movement and enough stillness to let the destination do the work.',rows:[['Day 1','Scenic arrival • warm check-in'],['Day 2','Viewpoint drive • local lunch'],['Day 3','Nature walk • fireside evening'],['Day 4','Slow morning • valley goodbye']]},
+city:{title:'The Explore Escape',desc:'A high-energy city break balanced with smart pacing, food and local culture.',rows:[['Day 1','Check-in • neighbourhood walk'],['Day 2','Icons • local food • night view'],['Day 3','Culture • shopping • free evening'],['Day 4','Brunch • final stop • departure']]}
+};
+function renderStory(k){const s=stories[k];storyTitle.textContent=s.title;storyDesc.textContent=s.desc;route.innerHTML=s.rows.map(r=>`<div class="route-row"><span class="route-dot"></span><div><b>${r[0]}</b><small>${r[1]}</small></div></div>`).join('')}
+renderStory('beach');
+document.querySelectorAll('.mood').forEach(b=>b.onclick=()=>{document.querySelectorAll('.mood').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderStory(b.dataset.story)});
 
-  // Premium opening brand reveal using the exact supplied logo image.
-  (() => {
-    const intro = document.getElementById('brandIntro');
-    if (!intro) return;
+document.querySelectorAll('.faq button').forEach(b=>b.addEventListener('click',()=>b.parentElement.classList.toggle('open')));
 
-    const finishIntro = () => {
-      if (intro.classList.contains('done')) return;
-      intro.classList.add('done');
-      document.body.classList.remove('intro-active');
-      document.body.classList.add('intro-complete');
-      setTimeout(() => intro.remove(), 700);
-    };
+function buildModalBrief(){
+ const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim();
+ if(!name||!phone){alert('Please add your name and phone / WhatsApp number.');return null}
+ return `Hi MyTravel4Sure, I want to plan a holiday.%0A%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0ADestination: ${encodeURIComponent(document.getElementById('tripDestination').value||'Need suggestions')}%0AMood: ${encodeURIComponent(document.getElementById('tripMood').value)}%0ADates: ${encodeURIComponent(document.getElementById('tripDates').value||'Flexible')}%0ANotes: ${encodeURIComponent(document.getElementById('notes').value||'None')}`;
+}
+document.getElementById('sendWa').onclick=()=>{const b=buildModalBrief();if(b)window.open('https://wa.me/'+PHONE+'?text='+b,'_blank','noopener')};
+document.getElementById('copyBrief').onclick=async()=>{const name=document.getElementById('name').value.trim(),phone=document.getElementById('phone').value.trim();if(!name||!phone){alert('Please add your name and phone / WhatsApp number.');return}const txt=`MyTravel4Sure Holiday Brief\nName: ${name}\nPhone: ${phone}\nDestination: ${tripDestination.value||'Need suggestions'}\nMood: ${tripMood.value}\nDates: ${tripDates.value||'Flexible'}\nNotes: ${notes.value||'None'}`;await navigator.clipboard.writeText(txt);briefSummary.style.display='block';briefSummary.textContent='Holiday brief copied. You can paste it into WhatsApp, email or Notes.'};
 
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
-      setTimeout(finishIntro, 220);
-    } else {
-      setTimeout(finishIntro, 2150);
-    }
+document.getElementById('sendContactWa').onclick=()=>{
+ const n=cName.value.trim(),p=cPhone.value.trim();if(!n||!p){alert('Please add your name and phone / WhatsApp number.');return}
+ const msg=`Hi MyTravel4Sure, I want to plan a holiday.%0A%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0ADestination: ${encodeURIComponent(cDestination.value||'Need suggestions')}%0ATravellers: ${encodeURIComponent(cTravelers.value)}%0ADates: ${encodeURIComponent(cDates.value||'Flexible')}%0ANotes: ${encodeURIComponent(cNotes.value||'None')}`;
+ window.open('https://wa.me/'+PHONE+'?text='+msg,'_blank','noopener')
+};
 
-    // Never trap the visitor behind the intro if a browser delays animations.
-    setTimeout(finishIntro, 3500);
-  })();
-
+(()=>{const intro=document.getElementById('brandIntro');if(!intro)return;const finish=()=>{if(intro.classList.contains('done'))return;intro.classList.add('done');document.body.classList.remove('intro-active');setTimeout(()=>intro.remove(),650)};setTimeout(finish,window.matchMedia('(prefers-reduced-motion: reduce)').matches?220:1850);setTimeout(finish,3200)})();
 </script>
 </body>
 </html>
