@@ -1,6 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": false,
+  "functions": {
+    "api/router.js": { "includeFiles": "data/packages.json", "maxDuration": 10 }
+  },
   "rewrites": [
     { "source": "/api/:path*", "destination": "/api/router?path=:path*" }
   ],
