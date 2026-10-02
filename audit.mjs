@@ -1,0 +1,9 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';
+const root=path.dirname(fileURLToPath(import.meta.url));let fail=0,warn=0;
+const html=fs.readdirSync(root).filter(x=>x.endsWith('.html'));
+const required=['index.html','holidays.html','package.html','destinations.html','india.html','international.html','honeymoon.html','experiences.html','about.html','contact.html','privacy.html','terms.html','cancellation.html','admin.html','404.html','app.js','styles.css','server.mjs','data/packages.json','robots.txt','sitemap.xml'];
+for(const f of required){if(!fs.existsSync(path.join(root,f))){console.error('FAIL missing',f);fail++}}
+for(const f of html){const s=fs.readFileSync(path.join(root,f),'utf8');if(!/<meta name="viewport"/.test(s)){console.error('FAIL viewport',f);fail++}if(!/<title>/.test(s)){console.error('FAIL title',f);fail++}if(/href="#"/.test(s)){console.error('FAIL dead # link',f);fail++}for(const m of s.matchAll(/(?:href|src)="([^"?#]+)(?:[?#][^"]*)?"/g)){const u=m[1];if(/^(https?:|mailto:|tel:|\/api\/)/.test(u)||u.startsWith('/'))continue;const p=path.join(root,u);if(!fs.existsSync(p)){console.error('FAIL broken local ref',f,'->',u);fail++}}}
+const packages=JSON.parse(fs.readFileSync(path.join(root,'data/packages.json'),'utf8'));const slugs=new Set();for(const p of packages){if(slugs.has(p.slug)){console.error('FAIL duplicate slug',p.slug);fail++}slugs.add(p.slug);if(!p.title||!p.destination||!p.image){console.error('FAIL package fields',p.slug);fail++}if(!fs.existsSync(path.join(root,p.image))){console.error('FAIL package image',p.slug,p.image);fail++}}
+if(packages.some(p=>p.startingPrice&&p.priceStatus!=='reference'&&p.priceStatus!=='confirmed')){console.warn('WARN priced package without explicit price state');warn++}
+console.log(`Audit complete: ${html.length} HTML pages, ${packages.length} package records, ${fail} failure(s), ${warn} warning(s).`);process.exit(fail?1:0);
